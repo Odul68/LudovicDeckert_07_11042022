@@ -1,0 +1,155 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  max-width: 1440px;
+  margin: auto;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+header h1 {
+  color: #D04F4F;
+  margin-top: 0;
+}
+
+header .searchBarContainer {
+  height: 69px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 2rem;
+}
+
+header .searchBarContainer .searchBar {
+  border: none;
+  background-color: #E7E7E7;
+  border-radius: 5px 0 0 5px;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+header .searchBarContainer .searchBar:focus {
+  outline: none;
+}
+
+header .searchBarContainer .searchButton {
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #E7E7E7;
+  width: 4rem;
+  cursor: pointer;
+}
+
+header .searchBarContainer .searchButton .fa-search {
+  font-size: 1.8rem;
+}
+
+/* Filter buttons */
+.sortRecipes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 3rem;
+}
+
+.sortRecipes .sortBtn {
+  margin: 1rem;
+  background-color: #D04F4F;
+  color: white;
+  padding: 20px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  min-width: 160px;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+/* Recipe cards */
+.recipes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.recipes .recipeCards {
+  width: 420px;
+  margin-bottom: 4rem;
+}
+
+.recipes .recipeCards .recipeImage {
+  width: 420px;
+  height: 178px;
+  background-color: #C7BEBE;
+  border-radius: 5px 5px 0 0;
+}
+
+.recipes .recipeCards .recipeInfos {
+  background-color: #E7E7E7;
+}
+
+.recipes .recipeCards .recipeInfos .recipeGeneralInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1rem;
+  height: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.recipes .recipeCards .recipeInfos .recipeGeneralInfo p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.recipes .recipeCards .recipeInfos .recipeGeneralInfo p .fa-clock {
+  margin-right: 0.4rem;
+  background-color: none;
+}
+
+.recipes .recipeCards .recipeInfos .recipeCookingInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 1rem 1rem 1rem;
+  font-size: 12px;
+  border-radius: 0 0 5px 5px;
+}
+
+.recipes .recipeCards .recipeInfos .recipeCookingInfo .recipeIngredients {
+  margin-right: 2rem;
+}
+
+.recipes .recipeCards .recipeInfos .recipeCookingInfo .recipeInstructions {
+  height: 120px;
+  overflow: auto;
+}
+
+.recipes .recipeCards .recipeInfos .recipeCookingInfo .recipeInstructions p {
+  margin: 0;
+}
+/*# sourceMappingURL=index.css.map */

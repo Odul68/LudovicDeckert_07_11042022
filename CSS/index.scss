@@ -1,0 +1,129 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 1440px;
+    margin: auto;
+}
+
+$color-primary:#D04F4F; 
+$color-secondary:#E7E7E7;
+$color-tertiary:#C7BEBE;
+
+
+
+/* Header */
+
+
+header{
+    text-align: center;
+    margin-top: 2rem;
+    h1{
+        color: $color-primary;
+        margin-top: 0;
+    }
+    .searchBarContainer{
+        height: 69px;
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem;
+        .searchBar{
+           border: none; 
+           background-color: $color-secondary;
+           border-radius: 5px 0 0 5px;
+           width: 100%; 
+           padding: 1rem;
+           font-size: 1.2rem;
+        }
+        .searchBar:focus{
+            outline: none;
+        }
+        .searchButton{
+            border: none;
+            border-radius: 0 5px 5px 0;
+            background-color: $color-secondary;
+            width: 4rem;
+            cursor: pointer;
+            .fa-search{
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+
+/* Filter buttons */
+
+
+.sortRecipes{
+    display: flex;
+    margin: 3rem;
+    .sortBtn{
+        margin: 1rem;
+        background-color: $color-primary;
+        color: white;
+        padding: 20px 24px;
+        font-size: 16px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        min-width: 160px;
+        letter-spacing: 1px;
+        text-align: left;
+    }
+}
+
+/* Recipe cards */
+
+.recipes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .recipeCards{
+        width: 420px;
+        margin-bottom: 4rem;
+        .recipeImage{
+            width: 420px;
+            height: 178px;
+            background-color: $color-tertiary;
+            border-radius: 5px 5px 0 0;
+        }
+        .recipeInfos{
+            background-color: $color-secondary;
+            .recipeGeneralInfo{
+                display: flex;
+                justify-content: space-between;
+                padding: 0 1rem;
+                height: 100px;
+                align-items: center;
+                p{
+                    display: flex;
+                    .fa-clock{
+                        margin-right: 0.4rem;
+                        background-color: none;
+                    }
+                }
+            }
+            .recipeCookingInfo{
+                display: flex;
+                padding: 0 1rem 1rem 1rem;
+                font-size: 12px;
+                border-radius: 0 0 5px 5px;
+                .recipeIngredients{
+                    margin-right: 2rem;
+                }
+                .recipeInstructions{
+                    height: 120px;
+                    overflow: auto;
+                    p{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+    }
+}

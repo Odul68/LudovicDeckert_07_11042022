@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    src="https://kit.fontawesome.com/935bc3f66d.js"
+    crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/CSS/index.css">
+    <title>Les petits plats</title>
+</head>
+<body>
+    <header>
+        <img src="/Assets/Toque.png" alt="logo">
+        <h1>Les petits plats</h1>
+        <div class="searchBarContainer">
+            <input type="text" placeholder="Rechercher une recette" class="searchBar">
+            <button type="submit" class="searchButton">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+    <section>
+        <div class="sortRecipes">
+        <div id="ingredientsBtn">
+            <input class="sortBtn" type="button" value="Ingrédients">
+            <span><i id="arrow" class="fas fa-angle-down"></i></span>
+        </div>
+        <div id="appliancesBtn">
+            <input class="sortBtn" type="button" value="Appareils">
+            <span><i id="arrow" class="fas fa-angle-down"></i></span>
+        </div>
+        <div id="ustensilsBtn">
+            <input class="sortBtn" type="button" value="Ustensiles">
+            <span><i id="arrow" class="fas fa-angle-down"></i></span>
+        </div>
+        </div>
+        <div class="recipes">
+        </div>
+    </section>
+    <script src="index.js" type="module"></script>
+</body>
+</html>
