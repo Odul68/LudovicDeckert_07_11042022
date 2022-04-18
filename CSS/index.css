@@ -15,7 +15,7 @@ header {
 }
 
 header h1 {
-  color: #D04F4F;
+  color: #d04f4f;
   margin-top: 0;
 }
 
@@ -32,7 +32,7 @@ header .searchBarContainer {
 
 header .searchBarContainer .searchBar {
   border: none;
-  background-color: #E7E7E7;
+  background-color: #e7e7e7;
   border-radius: 5px 0 0 5px;
   width: 100%;
   padding: 1rem;
@@ -46,7 +46,7 @@ header .searchBarContainer .searchBar:focus {
 header .searchBarContainer .searchButton {
   border: none;
   border-radius: 0 5px 5px 0;
-  background-color: #E7E7E7;
+  background-color: #e7e7e7;
   width: 4rem;
   cursor: pointer;
 }
@@ -63,9 +63,34 @@ header .searchBarContainer .searchButton .fa-search {
   margin: 3rem;
 }
 
+.sortRecipes #ingredientsBtn {
+  width: 16rem;
+}
+
+.sortRecipes #ingredientsBtn.active {
+  width: 35rem;
+  margin-right: 1rem;
+}
+
+.sortRecipes #appliancesBtn {
+  width: 16rem;
+}
+
+.sortRecipes #appliancesBtn.active {
+  width: 35rem;
+  margin-right: 1rem;
+}
+
+.sortRecipes #ustensilsBtn {
+  width: 16rem;
+}
+
+.sortRecipes #ustensilsBtn.active {
+  width: 35rem;
+  margin-right: 1rem;
+}
+
 .sortRecipes .sortBtn {
-  margin: 1rem;
-  background-color: #D04F4F;
   color: white;
   padding: 20px 24px;
   font-size: 16px;
@@ -78,6 +103,190 @@ header .searchBarContainer .searchButton .fa-search {
   text-align: left;
 }
 
+.sortRecipes .sortBtn.active {
+  width: 35rem;
+}
+
+.sortRecipes .sortBtnIngredients {
+  background-color: #3282f7;
+}
+
+.sortRecipes .sortBtnAppliances {
+  background-color: #68d9a4;
+}
+
+.sortRecipes .sortBtnUstensils {
+  background-color: #ed6454;
+}
+
+.sortRecipes .sortBtn:focus {
+  outline: none;
+}
+
+.sortRecipes ::-webkit-input-placeholder {
+  color: white;
+}
+
+.sortRecipes :-ms-input-placeholder {
+  color: white;
+}
+
+.sortRecipes ::-ms-input-placeholder {
+  color: white;
+}
+
+.sortRecipes ::placeholder {
+  color: white;
+}
+
+.sortRecipes .fa-angle-down {
+  position: relative;
+  left: -50px;
+  top: 4px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.4rem;
+  -webkit-transition: 1ms;
+  transition: 1ms;
+}
+
+.sortRecipes .fa-angle-down.active {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: 1ms;
+  transition: 1ms;
+  top: -42px;
+  left: 520px;
+}
+
+/* Sort Buttons Container */
+#ingredientsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #3282f7;
+  max-height: 300px;
+  width: 35rem;
+  position: relative;
+  top: -28px;
+}
+
+#ingredientsContainer .ingredientsContent {
+  /* Dropdown Content (Hidden by Default) */
+  display: none;
+  margin: 0;
+  padding: 1.2rem;
+  width: 11rem;
+  height: 0.5rem;
+}
+
+#ingredientsContainer .ingredientsOption {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 0.5rem;
+  max-width: 8rem;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+#ingredientsContainer .show {
+  display: block;
+}
+
+#appliancesContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #68d9a4;
+  max-height: 300px;
+  width: 35rem;
+  overflow: hidden;
+  position: relative;
+  top: -28px;
+}
+
+#appliancesContainer .appliancesContent {
+  /* Dropdown Content (Hidden by Default) */
+  display: none;
+  margin: 0;
+  padding: 1.2rem;
+  width: 11rem;
+  height: 0.5rem;
+}
+
+#appliancesContainer .appliancesOption {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  display: block;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 0.5rem;
+  max-width: 8rem;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+#appliancesContainer .show {
+  display: block;
+}
+
+#ustensilsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #ed6454;
+  max-height: 300px;
+  width: 35rem;
+  overflow: hidden;
+  position: relative;
+  top: -28px;
+}
+
+#ustensilsContainer .ustensilsContent {
+  /* Dropdown Content (Hidden by Default) */
+  display: none;
+  margin: 0;
+  padding: 1.2rem;
+  width: 11rem;
+  height: 0.5rem;
+}
+
+#ustensilsContainer .ustensilsOption {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  display: block;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 0.5rem;
+  max-width: 8rem;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+#ustensilsContainer .show {
+  display: block;
+}
+
 /* Recipe cards */
 .recipes {
   display: -webkit-box;
@@ -88,6 +297,7 @@ header .searchBarContainer .searchButton .fa-search {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 0 4rem;
 }
 
 .recipes .recipeCards {
@@ -98,12 +308,14 @@ header .searchBarContainer .searchButton .fa-search {
 .recipes .recipeCards .recipeImage {
   width: 420px;
   height: 178px;
-  background-color: #C7BEBE;
+  background-color: #c7bebe;
   border-radius: 5px 5px 0 0;
 }
 
 .recipes .recipeCards .recipeInfos {
-  background-color: #E7E7E7;
+  background-color: #e7e7e7;
+  height: 210px;
+  overflow: hidden;
 }
 
 .recipes .recipeCards .recipeInfos .recipeGeneralInfo {
@@ -142,6 +354,14 @@ header .searchBarContainer .searchButton .fa-search {
 
 .recipes .recipeCards .recipeInfos .recipeCookingInfo .recipeIngredients {
   margin-right: 2rem;
+}
+
+.recipes .recipeCards .recipeInfos .recipeCookingInfo .recipeIngredients p {
+  width: 12rem;
+}
+
+.recipes .recipeCards .recipeInfos .recipeCookingInfo .recipeIngredients li {
+  list-style-type: none;
 }
 
 .recipes .recipeCards .recipeInfos .recipeCookingInfo .recipeInstructions {

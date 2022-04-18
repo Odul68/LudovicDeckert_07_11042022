@@ -1,68 +1,98 @@
-
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     max-width: 1440px;
     margin: auto;
 }
 
-$color-primary:#D04F4F; 
-$color-secondary:#E7E7E7;
-$color-tertiary:#C7BEBE;
-
-
+$color-primary: #d04f4f;
+$color-secondary: #e7e7e7;
+$color-tertiary: #c7bebe;
+$color-fourth: #3282f7;
+$color-fifth: #68d9a4;
+$color-sixth: #ed6454;
 
 /* Header */
 
-
-header{
+header {
     text-align: center;
     margin-top: 2rem;
-    h1{
+
+    h1 {
         color: $color-primary;
         margin-top: 0;
     }
-    .searchBarContainer{
+
+    .searchBarContainer {
         height: 69px;
         display: flex;
         justify-content: space-between;
         margin: 2rem;
-        .searchBar{
-           border: none; 
-           background-color: $color-secondary;
-           border-radius: 5px 0 0 5px;
-           width: 100%; 
-           padding: 1rem;
-           font-size: 1.2rem;
+
+        .searchBar {
+            border: none;
+            background-color: $color-secondary;
+            border-radius: 5px 0 0 5px;
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.2rem;
         }
-        .searchBar:focus{
+
+        .searchBar:focus {
             outline: none;
         }
-        .searchButton{
+
+        .searchButton {
             border: none;
             border-radius: 0 5px 5px 0;
             background-color: $color-secondary;
             width: 4rem;
             cursor: pointer;
-            .fa-search{
+
+            .fa-search {
                 font-size: 1.8rem;
             }
         }
     }
 }
 
-
 /* Filter buttons */
 
-
-.sortRecipes{
+.sortRecipes {
     display: flex;
     margin: 3rem;
-    .sortBtn{
-        margin: 1rem;
-        background-color: $color-primary;
+
+    #ingredientsBtn {
+        width: 16rem;
+
+        &.active {
+            width: 35rem;
+            margin-right: 1rem;
+        }
+    }
+
+    #appliancesBtn {
+        width: 16rem;
+
+        &.active {
+            width: 35rem;
+            margin-right: 1rem;
+        }
+    }
+
+    #ustensilsBtn {
+        width: 16rem;
+
+        &.active {
+            width: 35rem;
+            margin-right: 1rem;
+        }
+    }
+
+    .sortBtn {
+        // margin: 1rem;
         color: white;
         padding: 20px 24px;
         font-size: 16px;
@@ -73,57 +103,240 @@ header{
         min-width: 160px;
         letter-spacing: 1px;
         text-align: left;
+
+        &.active {
+            width: 35rem;
+        }
     }
+
+    // each button with different background color
+    .sortBtnIngredients {
+        background-color: $color-fourth;
+    }
+
+    .sortBtnAppliances {
+        background-color: $color-fifth;
+    }
+
+    .sortBtnUstensils {
+        background-color: $color-sixth;
+    }
+
+    .sortBtn:focus {
+        outline: none;
+    }
+
+    ::placeholder {
+        color: white;
+        
+    }
+
+    .fa-angle-down {
+        position: relative;
+        left: -50px;
+        top: 4px;
+        cursor: pointer;
+        color: black;
+        font-size: 1.4rem;
+        transition: 1ms;
+
+        &.active {
+            // adds class active in js when clicked on dropBtn to rotate the arrow
+            transform: rotate(180deg);
+            transition: 1ms;
+            top: -42px;
+            left: 520px;
+        }
+    }
+
 }
 
-/* Recipe cards */
 
-.recipes{
+/* Sort Buttons Container */
+
+#ingredientsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    .recipeCards{
+    background-color: $color-fourth;
+    max-height: 300px;
+    width: 35rem;
+    // overflow: hidden;
+    position: relative;
+    top: -28px;
+
+    .ingredientsContent {
+        /* Dropdown Content (Hidden by Default) */
+        display: none;
+        margin: 0;
+        padding: 1.2rem;
+        width: 11rem;
+        height: 0.5rem;
+    }
+
+    .ingredientsOption {
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+        // display: block;
+        letter-spacing: 1px;
+        cursor: pointer;
+        padding: 0.5rem;
+        max-width: 8rem;
+        overflow: hidden;
+        padding: 0.5rem;
+    }
+
+    .show {
+        display: block;
+    }
+}
+
+#appliancesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: $color-fifth;
+    max-height: 300px;
+    width: 35rem;
+    overflow: hidden;
+    position: relative;
+    top: -28px;
+
+    .appliancesContent {
+        /* Dropdown Content (Hidden by Default) */
+        display: none;
+        margin: 0;
+        padding: 1.2rem;
+        width: 11rem;
+        height: 0.5rem;
+    }
+
+    .appliancesOption {
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+        display: block;
+        letter-spacing: 1px;
+        cursor: pointer;
+        padding: 0.5rem;
+        max-width: 8rem;
+        overflow: hidden;
+        padding: 0.5rem;
+    }
+
+    .show {
+        display: block;
+    }
+}
+
+#ustensilsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: $color-sixth;
+    max-height: 300px;
+    width: 35rem;
+    overflow: hidden;
+    position: relative;
+    top: -28px;
+
+    .ustensilsContent {
+        /* Dropdown Content (Hidden by Default) */
+        display: none;
+        margin: 0;
+        padding: 1.2rem;
+        width: 11rem;
+        height: 0.5rem;
+    }
+
+    .ustensilsOption {
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+        display: block;
+        letter-spacing: 1px;
+        cursor: pointer;
+        padding: 0.5rem;
+        max-width: 8rem;
+        overflow: hidden;
+        padding: 0.5rem;
+    }
+
+    .show {
+        display: block;
+    }
+}
+
+
+
+/* Recipe cards */
+
+
+.recipes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 4rem;
+
+    .recipeCards {
         width: 420px;
         margin-bottom: 4rem;
-        .recipeImage{
+
+        .recipeImage {
             width: 420px;
             height: 178px;
             background-color: $color-tertiary;
             border-radius: 5px 5px 0 0;
         }
-        .recipeInfos{
+
+        .recipeInfos {
             background-color: $color-secondary;
-            .recipeGeneralInfo{
+            height: 210px;
+            overflow: hidden;
+
+            .recipeGeneralInfo {
                 display: flex;
                 justify-content: space-between;
                 padding: 0 1rem;
                 height: 100px;
                 align-items: center;
-                p{
+
+                p {
                     display: flex;
-                    .fa-clock{
+
+                    .fa-clock {
                         margin-right: 0.4rem;
                         background-color: none;
                     }
                 }
             }
-            .recipeCookingInfo{
+
+            .recipeCookingInfo {
                 display: flex;
                 padding: 0 1rem 1rem 1rem;
                 font-size: 12px;
                 border-radius: 0 0 5px 5px;
-                .recipeIngredients{
+
+                .recipeIngredients {
                     margin-right: 2rem;
+                    p{
+                        width: 12rem;
+                    }
+                    li{
+                        list-style-type: none;
+                    }
                 }
-                .recipeInstructions{
+
+                .recipeInstructions {
                     height: 120px;
                     overflow: auto;
-                    p{
+
+                    p {
                         margin: 0;
                     }
                 }
             }
         }
-
     }
 }

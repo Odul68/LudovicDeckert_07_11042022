@@ -16,30 +16,35 @@
         <img src="/Assets/Toque.png" alt="logo">
         <h1>Les petits plats</h1>
         <div class="searchBarContainer">
-            <input type="text" placeholder="Rechercher une recette" class="searchBar">
+            <input id="searchInput" type="text" placeholder="Rechercher une recette" class="searchBar">
             <button type="submit" class="searchButton">
                 <i class="fas fa-search"></i>
             </button>
         </div>
     </header>
-    <section>
-        <div class="sortRecipes">
-        <div id="ingredientsBtn">
-            <input class="sortBtn" type="button" value="Ingrédients">
-            <span><i id="arrow" class="fas fa-angle-down"></i></span>
-        </div>
-        <div id="appliancesBtn">
-            <input class="sortBtn" type="button" value="Appareils">
-            <span><i id="arrow" class="fas fa-angle-down"></i></span>
-        </div>
-        <div id="ustensilsBtn">
-            <input class="sortBtn" type="button" value="Ustensiles">
-            <span><i id="arrow" class="fas fa-angle-down"></i></span>
-        </div>
-        </div>
-        <div class="recipes">
+    <section class="sortRecipes">
+        <article id="ingredientsBtn">
+            <input id="sortBtn" class="sortBtn sortBtnIngredients" type="button text" placeholder="Ingrédients">
+            <span><i id="arrowIngredients" class="arrow fas fa-angle-down"></i></span>
+        <div id="ingredientsContainer"></div>
+        </article>
+        <article id="appliancesBtn">
+            <input class="sortBtn sortBtnAppliances" type="button text" placeholder="Appareils">
+            <span><i id="arrowAppliances" class="arrow fas fa-angle-down"></i></span>
+            <div id="appliancesContainer"></div>
+        </article>
+        <article id="ustensilsBtn">
+            <input class="sortBtn sortBtnUstensils" type="button text" placeholder="Ustensiles">
+            <span><i id="arrowUstensils" class="arrow fas fa-angle-down"></i></span>
+            <div id="ustensilsContainer"></div>
+        </article>
         </div>
     </section>
-    <script src="index.js" type="module"></script>
+    <section>
+        <div class="recipes">
+    </section>
+    <script src="/Script/index.js" type="module"></script>
+    <script src="/Script/buttons.js" type="module"></script>
+    <script src="/Script/searchBar.js" type="module"></script>
 </body>
 </html>
