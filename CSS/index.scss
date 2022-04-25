@@ -161,15 +161,17 @@ header {
     background-color: $color-fourth;
     max-height: 300px;
     width: 35rem;
-    // overflow: hidden;
-    position: relative;
-    top: -28px;
+    overflow: hidden;
+    position: absolute;
+    top: 324px;
+    border-radius: 0 0 5px 5px;
+    z-index: 1000;
 
     .ingredientsContent {
         /* Dropdown Content (Hidden by Default) */
         display: none;
         margin: 0;
-        padding: 1.2rem;
+        padding: 20px;
         width: 11rem;
         height: 0.5rem;
     }
@@ -181,10 +183,7 @@ header {
         // display: block;
         letter-spacing: 1px;
         cursor: pointer;
-        padding: 0.5rem;
-        max-width: 8rem;
         overflow: hidden;
-        padding: 0.5rem;
     }
 
     .show {
@@ -200,14 +199,16 @@ header {
     max-height: 300px;
     width: 35rem;
     overflow: hidden;
-    position: relative;
-    top: -28px;
+    position: absolute;
+    top: 324px;
+    border-radius: 0 0 5px 5px;
+    z-index: 1000;
 
     .appliancesContent {
         /* Dropdown Content (Hidden by Default) */
         display: none;
         margin: 0;
-        padding: 1.2rem;
+        padding: 20px;
         width: 11rem;
         height: 0.5rem;
     }
@@ -219,10 +220,6 @@ header {
         display: block;
         letter-spacing: 1px;
         cursor: pointer;
-        padding: 0.5rem;
-        max-width: 8rem;
-        overflow: hidden;
-        padding: 0.5rem;
     }
 
     .show {
@@ -238,14 +235,17 @@ header {
     max-height: 300px;
     width: 35rem;
     overflow: hidden;
-    position: relative;
-    top: -28px;
+    position: absolute;
+    top: 324px;
+    border-radius: 0 0 5px 5px;
+    z-index: 1000;
+
 
     .ustensilsContent {
         /* Dropdown Content (Hidden by Default) */
         display: none;
         margin: 0;
-        padding: 1.2rem;
+        padding: 20px;
         width: 11rem;
         height: 0.5rem;
     }
@@ -257,11 +257,7 @@ header {
         display: block;
         letter-spacing: 1px;
         cursor: pointer;
-        padding: 0.5rem;
-        max-width: 8rem;
-        overflow: hidden;
-        padding: 0.5rem;
-    }
+        }
 
     .show {
         display: block;
@@ -294,12 +290,12 @@ header {
             background-color: $color-secondary;
             height: 210px;
             overflow: hidden;
+            border-radius: 0 0 5px 5px;
 
             .recipeGeneralInfo {
                 display: flex;
                 justify-content: space-between;
                 padding: 0 1rem;
-                height: 100px;
                 align-items: center;
 
                 p {
@@ -319,6 +315,7 @@ header {
                 border-radius: 0 0 5px 5px;
 
                 .recipeIngredients {
+                    
                     margin-right: 2rem;
                     p{
                         width: 12rem;

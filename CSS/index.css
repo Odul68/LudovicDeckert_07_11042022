@@ -172,15 +172,18 @@ header .searchBarContainer .searchButton .fa-search {
   background-color: #3282f7;
   max-height: 300px;
   width: 35rem;
-  position: relative;
-  top: -28px;
+  overflow: hidden;
+  position: absolute;
+  top: 324px;
+  border-radius: 0 0 5px 5px;
+  z-index: 1000;
 }
 
 #ingredientsContainer .ingredientsContent {
   /* Dropdown Content (Hidden by Default) */
   display: none;
   margin: 0;
-  padding: 1.2rem;
+  padding: 20px;
   width: 11rem;
   height: 0.5rem;
 }
@@ -191,10 +194,7 @@ header .searchBarContainer .searchButton .fa-search {
   text-decoration: none;
   letter-spacing: 1px;
   cursor: pointer;
-  padding: 0.5rem;
-  max-width: 8rem;
   overflow: hidden;
-  padding: 0.5rem;
 }
 
 #ingredientsContainer .show {
@@ -214,15 +214,17 @@ header .searchBarContainer .searchButton .fa-search {
   max-height: 300px;
   width: 35rem;
   overflow: hidden;
-  position: relative;
-  top: -28px;
+  position: absolute;
+  top: 324px;
+  border-radius: 0 0 5px 5px;
+  z-index: 1000;
 }
 
 #appliancesContainer .appliancesContent {
   /* Dropdown Content (Hidden by Default) */
   display: none;
   margin: 0;
-  padding: 1.2rem;
+  padding: 20px;
   width: 11rem;
   height: 0.5rem;
 }
@@ -234,10 +236,6 @@ header .searchBarContainer .searchButton .fa-search {
   display: block;
   letter-spacing: 1px;
   cursor: pointer;
-  padding: 0.5rem;
-  max-width: 8rem;
-  overflow: hidden;
-  padding: 0.5rem;
 }
 
 #appliancesContainer .show {
@@ -257,15 +255,17 @@ header .searchBarContainer .searchButton .fa-search {
   max-height: 300px;
   width: 35rem;
   overflow: hidden;
-  position: relative;
-  top: -28px;
+  position: absolute;
+  top: 324px;
+  border-radius: 0 0 5px 5px;
+  z-index: 1000;
 }
 
 #ustensilsContainer .ustensilsContent {
   /* Dropdown Content (Hidden by Default) */
   display: none;
   margin: 0;
-  padding: 1.2rem;
+  padding: 20px;
   width: 11rem;
   height: 0.5rem;
 }
@@ -277,10 +277,6 @@ header .searchBarContainer .searchButton .fa-search {
   display: block;
   letter-spacing: 1px;
   cursor: pointer;
-  padding: 0.5rem;
-  max-width: 8rem;
-  overflow: hidden;
-  padding: 0.5rem;
 }
 
 #ustensilsContainer .show {
@@ -316,6 +312,7 @@ header .searchBarContainer .searchButton .fa-search {
   background-color: #e7e7e7;
   height: 210px;
   overflow: hidden;
+  border-radius: 0 0 5px 5px;
 }
 
 .recipes .recipeCards .recipeInfos .recipeGeneralInfo {
@@ -326,7 +323,6 @@ header .searchBarContainer .searchButton .fa-search {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 1rem;
-  height: 100px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

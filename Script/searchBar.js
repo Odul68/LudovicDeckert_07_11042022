@@ -2,17 +2,27 @@
 
 const searchInput = document.querySelector("#searchInput")
 searchInput.addEventListener("keyup", function(e){
-    let searchItem = e.target.value.toLowerCase();
-    let nameItems = document.querySelectorAll(".recipeName")
+    let nameItems = document.querySelectorAll(".recipeCards")
 
-    nameItems.forEach((item) => {
-        if(item.textContent.toLowerCase().indexOf(searchItem) != -1){
+    if(e.target.value.length > 2) {
+        let searchItem = e.target.value.toLowerCase();
+        nameItems.forEach((item) => {
+            if(item.textContent.toLowerCase().indexOf(searchItem) !== -1){
+                item.closest("article").style.display = "block";
+            } else {
+                item.closest("article").style.display = "none";
+            }
+        });
+    } else {
+        nameItems.forEach((item) => {
             item.closest("article").style.display = "block";
-        } else {
-            item.closest("article").style.display = "none";
-        }
-        console.log(item.textContent)
-    })
-
-    console.log(nameItems)
+        })
+    }
 })
+
+
+// const ingredientOption = document.querySelector(".ingredientsOption")
+// ingredientOption.addEventListener("click", (e) => {
+   
+//     if(e.target.value)
+// })

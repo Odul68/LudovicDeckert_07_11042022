@@ -3,18 +3,17 @@ import data from "../recipes.js"
 const recipes = data.recipes;
 
 
-// console.log(recipes.ingredients.join('')); 
-// To remove the commas between ingredients ?
-
-const ingredientsQty = data.recipes.map(recipe => recipe.ingredients);
-
-// typeof undefined === undefined ?? 
-// filter((elem) => elem !== undefined)
-
 const displayRecipes = (recipes) => {  // display card with Name, cooking time, ingredients and description
     const recipeContainer = document.querySelector(".recipes");
     recipeContainer.innerHTML = "";
     for(let recipe of recipes) {
+        const ingredientsParagraph = document.createElement("p");
+        recipe.ingredients.forEach(
+            (item) =>
+            (ingredientsParagraph.innerHTML += `<li><strong>${item.ingredient}</strong> :
+             ${item.quantity || ""} 
+             ${item.unit || ""} </li>`)
+        );
         const elementRecipe = document.createElement("article");
         elementRecipe.classList.add("recipeCards")
         elementRecipe.innerHTML = `
@@ -25,8 +24,7 @@ const displayRecipes = (recipes) => {  // display card with Name, cooking time, 
                 <p><i class="far fa-light fa-clock"></i>${recipe.time}</p>
             </div>
         <div class="recipeCookingInfo">
-        <div class="recipeIngredients">
-            <p>${recipe.ingredients.map(item => `<li><strong>${item.ingredient}</strong> : ${item.quantity} ${item.unit} </li>`)}</p>
+        <div id="${recipe.name}" class="recipeIngredients">
         </div>
         <div class="recipeInstructions">
              <p>${recipe.description}</p>
@@ -36,10 +34,25 @@ const displayRecipes = (recipes) => {  // display card with Name, cooking time, 
         `;
         
         recipeContainer.appendChild(elementRecipe);
+        const recipeIngredient = document.getElementById(recipe.name);
+        recipeIngredient.appendChild(ingredientsParagraph);
     }
 }
 
 displayRecipes(recipes);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  
