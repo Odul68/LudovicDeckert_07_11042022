@@ -172,11 +172,10 @@ header .searchBarContainer .searchButton .fa-search {
   background-color: #3282f7;
   max-height: 300px;
   width: 35rem;
-  overflow: hidden;
-  position: absolute;
-  top: 324px;
+  overflow: auto;
+  position: relative;
+  top: -27px;
   border-radius: 0 0 5px 5px;
-  z-index: 1000;
 }
 
 #ingredientsContainer .ingredientsContent {
@@ -213,11 +212,10 @@ header .searchBarContainer .searchButton .fa-search {
   background-color: #68d9a4;
   max-height: 300px;
   width: 35rem;
-  overflow: hidden;
-  position: absolute;
-  top: 324px;
+  overflow: auto;
+  position: relative;
+  top: -27px;
   border-radius: 0 0 5px 5px;
-  z-index: 1000;
 }
 
 #appliancesContainer .appliancesContent {
@@ -254,11 +252,10 @@ header .searchBarContainer .searchButton .fa-search {
   background-color: #ed6454;
   max-height: 300px;
   width: 35rem;
-  overflow: hidden;
-  position: absolute;
-  top: 324px;
+  overflow: auto;
+  position: relative;
+  top: -27px;
   border-radius: 0 0 5px 5px;
-  z-index: 1000;
 }
 
 #ustensilsContainer .ustensilsContent {
@@ -367,5 +364,37 @@ header .searchBarContainer .searchButton .fa-search {
 
 .recipes .recipeCards .recipeInfos .recipeCookingInfo .recipeInstructions p {
   margin: 0;
+}
+
+/* Tags */
+.tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 2rem;
+}
+
+.tags .ingredientTag {
+  background-color: #3282f7;
+  padding: 0.6rem;
+  color: white;
+  border-radius: 5px;
+  margin-right: 0.4rem;
+}
+
+.tags .applianceTag {
+  background-color: #68d9a4;
+  padding: 0.6rem;
+  color: white;
+  border-radius: 5px;
+  margin-right: 0.4rem;
+}
+
+.tags .ustensilTag {
+  background-color: #ed6454;
+  padding: 0.6rem;
+  color: white;
+  border-radius: 5px;
+  margin-right: 0.4rem;
 }
 /*# sourceMappingURL=index.css.map */

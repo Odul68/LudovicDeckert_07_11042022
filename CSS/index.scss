@@ -161,11 +161,11 @@ header {
     background-color: $color-fourth;
     max-height: 300px;
     width: 35rem;
-    overflow: hidden;
-    position: absolute;
-    top: 324px;
+    overflow: auto;
+    position: relative;
+    top: -27px;
     border-radius: 0 0 5px 5px;
-    z-index: 1000;
+
 
     .ingredientsContent {
         /* Dropdown Content (Hidden by Default) */
@@ -180,7 +180,6 @@ header {
         color: white;
         font-weight: 700;
         text-decoration: none;
-        // display: block;
         letter-spacing: 1px;
         cursor: pointer;
         overflow: hidden;
@@ -198,11 +197,11 @@ header {
     background-color: $color-fifth;
     max-height: 300px;
     width: 35rem;
-    overflow: hidden;
-    position: absolute;
-    top: 324px;
+    overflow: auto;
+    position: relative;
+    top: -27px;
     border-radius: 0 0 5px 5px;
-    z-index: 1000;
+
 
     .appliancesContent {
         /* Dropdown Content (Hidden by Default) */
@@ -234,11 +233,10 @@ header {
     background-color: $color-sixth;
     max-height: 300px;
     width: 35rem;
-    overflow: hidden;
-    position: absolute;
-    top: 324px;
+    overflow: auto;
+    position: relative;
+    top: -27px;
     border-radius: 0 0 5px 5px;
-    z-index: 1000;
 
 
     .ustensilsContent {
@@ -335,5 +333,37 @@ header {
                 }
             }
         }
+    }
+}
+
+
+/* Tags */
+
+.tags {
+    display: flex;
+    margin: 0 2rem;
+
+    .ingredientTag {
+        background-color: $color-fourth;
+        padding: 0.6rem;
+        color: white;
+        border-radius: 5px;
+        margin-right: 0.4rem;
+    }
+
+    .applianceTag {
+        background-color: $color-fifth;
+        padding: 0.6rem;
+        color: white;
+        border-radius: 5px;
+        margin-right: 0.4rem;
+    }
+
+    .ustensilTag {
+        background-color: $color-sixth;
+        padding: 0.6rem;
+        color: white;
+        border-radius: 5px;
+        margin-right: 0.4rem;
     }
 }

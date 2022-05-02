@@ -125,42 +125,75 @@ sortUstensils(ustensils);
 // FILTER BY TAGS 
 
 
-const recipes = data.recipes;
-// const results = [];
-// console.log(results)
+const inputFilter = (input) => {
+    let nameItems = document.querySelectorAll(".recipeCards")
+    console.log(nameItems.length, input)
+    let searchItem = input.toLowerCase();
+    const filteredRecipes = [...nameItems].map((item) => {
+      
+        // if (item.textContent.toLowerCase().indexOf(searchItem) !== -1) {
 
-let tagSelected = document.querySelectorAll(".ingredientsOption")
-Array.from(tagSelected).forEach((item) => item.innerText)
-console.log(tagSelected)
+        // Works when search is removed but button doesn't work alone
+        if (item.textContent.toLowerCase().indexOf(searchItem) !== -1) {
 
-const results = document.querySelector(".recipeCards")
+            item.closest("article").style.display = "block";
+        } else {
+            item.closest("article").style.display = "none";
+        }
+    });
+    return filteredRecipes;
 
+}
+
+
+
+// Ingredient tag and filter 
+const tagsContainer = document.querySelector(".tags")
 const ingredientOption = document.querySelectorAll(".ingredientsOption")
-Array.from(ingredientOption).forEach((item) => item.addEventListener("click", () => {
+Array.from(ingredientOption).forEach((item) => 
+item.addEventListener("click", () => {
 
-    for (let i = 0; i < recipes.length; i++) {
+    // +++++++++++++++++++
 
-        const {name, ingredients, description} = recipes[i];
-        console.log(recipes[i])
+    const searchInput = document.querySelector("#searchInput");
+    // inputFilter(searchInput.textContent);
 
-        const includesName = name.toLowerCase().includes(tagSelected.toString().toLowerCase());
-        console.log(includesName)
+    // ++++++++++++++++++
 
-        // const includesDescription = description.toLowerCase().includes(tagQuery.toLowerCase());
-        // console.log(includesDescription)
 
-        // let includesIngredients = false;
-        // for (let y = 0; y < ingredients.length; y++) {
-        //     if (ingredients[y].ingredient.toLowerCase().includes(tagQuery.toLowerCase)) {
-        //         includesIngredients = true;
-        //     }
-        // }
-        // if (includesName || includesDescription || includesIngredients) {
-        //     results.style.display = "block";
-        // } else {
-        //     results.style.display = "none";
-        // }
-     }
-    }
-))
+    const ingredientNewTag = document.createElement("div");
+    ingredientNewTag.classList.add("ingredientTag")
+    ingredientNewTag.innerText = item.innerText;
+    tagsContainer.appendChild(ingredientNewTag);
+    inputFilter(item.innerText)
+
+}))
+
+
+// Appliance tag and filter
+const applianceOption = document.querySelectorAll(".appliancesOption")
+Array.from(applianceOption).forEach((item) =>
+item.addEventListener("click", () => {
+    const applianceNewTag = document.createElement("div");
+    applianceNewTag.classList.add("applianceTag")
+    applianceNewTag.innerText = item.innerText;
+    tagsContainer.appendChild(applianceNewTag);
+    inputFilter(item.innerText)
+})
+)
+
+
+// Ustensil tag and filter
+const ustensilOption = document.querySelectorAll(".ustensilsOption")
+Array.from(ustensilOption).forEach((item) =>
+item.addEventListener("click", () => {
+    const ustensilNewTag = document.createElement("div");
+    ustensilNewTag.classList.add("ustensilTag")
+    ustensilNewTag.innerText = item.innerText;
+    tagsContainer.appendChild(ustensilNewTag);
+    inputFilter(item.innerText)
+})
+)
+
+
 
