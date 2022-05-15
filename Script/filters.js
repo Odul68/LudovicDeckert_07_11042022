@@ -3,25 +3,34 @@
 const searchInput = document.querySelector("#searchInput")
 
 
-export const inputFilter = (input) => {
-    let nameItems = document.querySelectorAll(".recipeCards")
-    let searchItem = input.toLowerCase();
-    const filteredRecipes = [...nameItems].map((item) => {
-        if(item.textContent.toLowerCase().indexOf(searchItem) !== -1){
-            item.closest("article").style.display = "block";
-        } else {
-            item.closest("article").style.display = "none";
-        }
-    });
-    return filteredRecipes;
-};
+
+
+class Filters {
+
+    inputFilter = (input) => {
+        let nameItems = document.querySelectorAll(".recipeCards")
+        let searchItem = input.toLowerCase();
+        const filteredRecipes = [...nameItems].map((item) => {
+            if(item.textContent.toLowerCase().indexOf(searchItem) !== -1){
+                item.closest("article").style.display = "block";
+            } else {
+                item.closest("article").style.display = "none";
+            }
+        });
+        return filteredRecipes;
+    };
+    
+}
+
+let filter = new Filters();
+
 
 
 searchInput.addEventListener("keyup", function (e) {
     let nameItems = document.querySelectorAll(".recipeCards")
 
     if(e.target.value.length > 2) {
-        inputFilter(e.target.value)
+        filter.inputFilter(e.target.value)
     } else {
         nameItems.forEach((item) => {
         item.closest("article").style.display = "block";
@@ -100,3 +109,70 @@ ustensilsSearchInput.addEventListener("keyup", (e) => {
         })
     }
 })
+
+
+// FILTER BY TAGS 
+
+
+// Ingredient tag and filter 
+const tagsContainer = document.querySelector(".tags")
+const ingredientOption = document.querySelectorAll(".ingredientsOption")
+Array.from(ingredientOption).forEach((item) => 
+item.addEventListener("click", () => {
+
+    // +++++++++++++++++++
+
+    const searchInput = document.querySelector("#searchInput");
+    // inputFilter(searchInput.textContent);
+
+    // ++++++++++++++++++
+
+
+    const ingredientNewTag = document.createElement("div");
+    ingredientNewTag.classList.add("ingredientTag")
+    ingredientNewTag.innerText = item.innerText;
+    tagsContainer.appendChild(ingredientNewTag);
+    filter.inputFilter(item.innerText)
+
+    ingredientNewTag.addEventListener("click", () => {
+        ingredientNewTag.remove()
+        filter.inputFilter(item.innerText = "")
+    })
+})
+)
+
+
+// Appliance tag and filter
+const applianceOption = document.querySelectorAll(".appliancesOption")
+Array.from(applianceOption).forEach((item) =>
+item.addEventListener("click", () => {
+    const applianceNewTag = document.createElement("div");
+    applianceNewTag.classList.add("applianceTag")
+    applianceNewTag.innerText = item.innerText;
+    tagsContainer.appendChild(applianceNewTag);
+    filter.inputFilter(item.innerText)
+
+    applianceNewTag.addEventListener("click", () => {
+        applianceNewTag.remove()
+        filter.inputFilter(item.innerText = "")
+    })
+})
+)
+
+
+// Ustensil tag and filter
+const ustensilOption = document.querySelectorAll(".ustensilsOption")
+Array.from(ustensilOption).forEach((item) =>
+item.addEventListener("click", () => {
+    const ustensilNewTag = document.createElement("div");
+    ustensilNewTag.classList.add("ustensilTag")
+    ustensilNewTag.innerText = item.innerText;
+    tagsContainer.appendChild(ustensilNewTag);
+    filter.inputFilter(item.innerText)
+
+    ustensilNewTag.addEventListener("click", () => {
+        ustensilNewTag.remove()
+        filter.inputFilter(item.innerText = "")
+    })
+})
+)
