@@ -1,6 +1,5 @@
 import data from "../recipes.js"
-const recipes = data.recipes;
-
+export const recipes = data.recipes;
 
 
 // Ingredients only already without duplicate and all with the same syntax keeping the capital letter at the beginning
@@ -16,16 +15,12 @@ const ingredients = [
     )
 ];
 
-
-
 // Appliances only already without duplicate
 
 const appliances = [
     ...new Set(data.recipes.map((recipe) => recipe.appliance))];
     console.log(appliances)
-
-
-    
+  
 // ustensils button
 
 // const formatUstensilString = (i) => {
@@ -47,7 +42,7 @@ const ustensils = [
 ]
 
 
-class Display {
+export class Display {
 
 
 
