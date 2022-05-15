@@ -125,6 +125,7 @@ sortUstensils(ustensils);
 // FILTER BY TAGS 
 
 
+
 const inputFilter = (input) => {
     let nameItems = document.querySelectorAll(".recipeCards")
     console.log(nameItems.length, input)
@@ -167,7 +168,14 @@ item.addEventListener("click", () => {
     tagsContainer.appendChild(ingredientNewTag);
     inputFilter(item.innerText)
 
-}))
+    ingredientNewTag.addEventListener("click", () => {
+        ingredientNewTag.remove()
+        inputFilter(item.innerText = "")
+    })
+})
+)
+
+
 
 
 // Appliance tag and filter
@@ -179,6 +187,11 @@ item.addEventListener("click", () => {
     applianceNewTag.innerText = item.innerText;
     tagsContainer.appendChild(applianceNewTag);
     inputFilter(item.innerText)
+
+    applianceNewTag.addEventListener("click", () => {
+        applianceNewTag.remove()
+        inputFilter(item.innerText = "")
+    })
 })
 )
 
@@ -192,8 +205,18 @@ item.addEventListener("click", () => {
     ustensilNewTag.innerText = item.innerText;
     tagsContainer.appendChild(ustensilNewTag);
     inputFilter(item.innerText)
+
+    ustensilNewTag.addEventListener("click", () => {
+        ustensilNewTag.remove()
+        inputFilter(item.innerText = "")
+    })
 })
 )
+
+
+
+
+
 
 
 
