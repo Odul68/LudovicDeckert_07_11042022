@@ -37,14 +37,11 @@ Array.from(ingredientOption).forEach((item) => {
             ingredientNewTag.remove();
             filter.removeTag();
             filter.displayRecipes(recipes)
-            // display.displayRecipes(recipes)
         })
     })
     
 
 });
-
-
 
 
 // Appliance tag and filter
@@ -62,7 +59,8 @@ Array.from(applianceOption).forEach((item) => {
     
         applianceNewTag.addEventListener("click", () => {
             applianceNewTag.remove()
-            display.displayRecipes(recipes)
+            filter.removeTag();
+            filter.displayRecipes(recipes)
         })
     })
 });
@@ -82,8 +80,8 @@ Array.from(ustensilOption).forEach((item) => {
         filter.addTag(item.innerText)
     
         ustensilNewTag.addEventListener("click", () => {
-            ustensilNewTag.remove()
-            display.displayRecipes(recipes)
+            filter.removeTag();
+            filter.displayRecipes(recipes)
         })
     })
 });
