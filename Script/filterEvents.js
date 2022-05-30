@@ -3,8 +3,6 @@ import filter from "./filters.js"
 import recipes from "../recipes.js"
 
 
-
-
 searchInput.addEventListener("keyup", function (e) {
     if(e.target.value.length < 3) {
         display.init();
@@ -14,6 +12,8 @@ searchInput.addEventListener("keyup", function (e) {
         filter.displayRecipes();
     }
 })
+
+
 
 // FILTER BY TAGS 
 
@@ -99,7 +99,7 @@ ingredientsSearchInput.addEventListener("keyup", (e) => {
 
         let searchIngredientsName = e.target.value.toLowerCase();
         console.log(ingredientsName)
-        Object.values(ingredientsName).filter(
+        Object.values(ingredientsName).filter( // Change to filter so there is no conflict with the CSS display none / to change though
             (item) => 
           item.innerText.toLowerCase().indexOf(searchIngredientsName) !== -1
         )
