@@ -1,5 +1,5 @@
 
-export default {
+let data = {
     recipes : [
         {
             "id": 1,
@@ -1728,3 +1728,4 @@ export default {
     ]
 }
 
+export default data.recipes;
