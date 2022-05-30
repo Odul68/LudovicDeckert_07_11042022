@@ -1,17 +1,6 @@
 import recipes from "../recipes.js";
 import display from "./display.js";
 
-// const searchInput = document.querySelector("#searchInput")
-
-// let display = new Display();
-// display.displayRecipes();
-
-// Ingredients only already without duplicate and all with the same syntax keeping the capital letter at the beginning
-// const formatIngredientString = (i) => {
-//   let g = i.toLowerCase();
-//   return `${i[0].toUpperCase()}${g.slice(1)}`;
-// };
-
 export class Filters {
   recipeList = recipes;
   filteredRecipes = [];
@@ -24,7 +13,7 @@ export class Filters {
 
   inputFilter = (input) => {
     let searchItem = input.toLowerCase();
-    this.searchItem = searchItem + this.tags;
+    this.searchItem = searchItem ;
     console.log(searchItem)
     console.log(this.filteredRecipes)
 
@@ -90,30 +79,6 @@ export class Filters {
 
   displayRecipes = () => display.displayRecipes(this.filteredRecipes);
 
-//   getIngredients = () => {
-//     this.filteredRecipesIngredients = [
-//       ...new Set(
-//         recipes.flatMap((recipe) =>
-//           recipe.ingredients.map((r) => formatIngredientString(r.ingredient))
-//         )
-//       ),
-//     ];
-//   };
-
-
-
-  // getAppliances = () => {
-  //    this.filteredRecipesAppliances = [
-  // ...new Set(recipes.map((recipe) => recipe.appliance))];
-  // }
-
-  // getUstensils = () => {
-  //     this.filteredRecipesUstensils = [
-  //         ...new Set(
-  //             recipes.flatMap((recipe) => recipe.ustensils)
-  //         )
-  //     ]
-  // }
 }
 
 let filter = new Filters();
