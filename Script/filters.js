@@ -8,7 +8,7 @@ export class Filters {
   filteredRecipesAppliances = [];
   filteredRecipesUstensils = [];
   tags = [];
-  selectedTags = [];
+  selectedTags = []; // to use in removeTag ? 
   searchItem = "";
 
   inputFilter = (input) => {
