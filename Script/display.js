@@ -49,9 +49,6 @@ export class Display {
 
     init = () => {
         this.displayRecipes(recipes)
-        this.displayIngredientsButton(ingredients)
-        this.displayAppliancesButton(appliances)
-        this.displayUstensilsButton(ustensils)
     }
 
 
@@ -144,3 +141,7 @@ export class Display {
 
 let display = new Display();
 export default display;
+display.displayIngredientsButton(ingredients);
+display.displayAppliancesButton(appliances)
+display.displayUstensilsButton(ustensils)
+
