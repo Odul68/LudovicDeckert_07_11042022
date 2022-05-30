@@ -1,6 +1,6 @@
 import data from "../recipes.js"
 import display from "./display.js";
-import filter from "./display.js"
+import filter from "./filters.js";
 
 // Button functions for opening and closing
 
@@ -9,7 +9,6 @@ const ingredientsBtn = document.querySelector("#arrowIngredients");
 ingredientsBtn.addEventListener("click", () => {
     const i = document.querySelectorAll(".ingredientsContent");
     Array.from(i).forEach((item) => item.classList.toggle("show"));
-    
   document.getElementById("arrowIngredients").classList.toggle("active");
   document.querySelector(".sortBtnIngredients").classList.toggle("active");
   document.querySelector("#ingredientsBtn").classList.toggle("active");
