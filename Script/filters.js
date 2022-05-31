@@ -12,10 +12,11 @@ export class Filters {
   searchItem = "";
 
   inputFilter = (input) => {
-    let searchItem = input.toLowerCase();
+    let searchItem = input && input.toLowerCase();
     this.searchItem = searchItem ;
-    console.log(searchItem)
-    console.log(this.filteredRecipes)
+    if (!this.searchItem) {
+      return this.recipeList;
+    }
 
     this.filteredRecipes = this.recipeList.filter(
 
@@ -31,13 +32,12 @@ export class Filters {
     return this.filteredRecipes;
   };
 
-  filterInputs = () => {
-    let filteredRecipesinit = this.inputFilter(this.searchItem);
-    console.log(filteredRecipesinit.length);
+  filterInputs = (value) => {
+    this.searchItem = value
+    let filteredRecipesinit = this.inputFilter(value);
 
 
     if (this.tags.length) {
-        console.log(this.tags.length)
 
       const finalList = filteredRecipesinit.filter((item) => {
       const recipeIngrdients = item.ingredients.map((ingre) => ingre.ingredient.toLowerCase());
@@ -50,30 +50,27 @@ export class Filters {
       });
 
       this.filteredRecipes = finalList;
-      console.log(finalList)
 
     } else {
         this.filteredRecipes = filteredRecipesinit;
-        console.log(filteredRecipesinit)
     }
   };
 
   addTag = (tag) => {
-    console.log(tag);
     if (this.tags.includes(tag)) {
       return;
     }
     this.tags = [...this.tags, tag.toLowerCase()];
-    console.log(this.tags)
-    this.filterInputs();
+    this.filterInputs(this.searchItem);
     this.displayRecipes();
   };
 
         // WHEN CLICKED ON => Remove the "selectedTag" from the array ? => pop best way ?
-  removeTag = () => {
-    this.tags.pop();
-    console.log(this.tags)
-    this.filterInputs();
+  removeTag = (tag) => {
+    this.tags = this.tags.filter((item) => {
+      return item.toLowerCase() !== tag.toLowerCase();
+    });
+    this.filterInputs(this.searchItem);
     this.displayRecipes();
   }
 
