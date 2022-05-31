@@ -4,14 +4,9 @@ import recipes from "../recipes.js"
 
 
 searchInput.addEventListener("keyup", function (e) {
-    if(e.target.value.length < 3) {
-        display.init();
-        filter.inputFilter(e.target.value)
-    } if (e.target.value.length > 2) {
-        filter.inputFilter(e.target.value);
+        filter.filterInputs(e.target.value);
         filter.displayRecipes();
-    }
-})
+    });
 
 
 
@@ -35,7 +30,7 @@ Array.from(ingredientOption).forEach((item) => {
     
         ingredientNewTag.addEventListener("click", () => {
             ingredientNewTag.remove();
-            filter.removeTag();
+            filter.removeTag(ingredientNewTag.innerText);
             filter.displayRecipes(recipes)
         })
     })
@@ -98,13 +93,15 @@ ingredientsSearchInput.addEventListener("keyup", (e) => {
     let ingredientsName = document.querySelectorAll(".ingredientsContent")
 
         let searchIngredientsName = e.target.value.toLowerCase();
-        console.log(ingredientsName)
-        Object.values(ingredientsName).filter( // Change to filter so there is no conflict with the CSS display none / to change though
+        const ingredientResults = Array.from(ingredientsName)
+        .filter(
             (item) => 
-          item.innerText.toLowerCase().indexOf(searchIngredientsName) !== -1
+                item.innerText.toLowerCase().indexOf(searchIngredientsName) !== -1
         )
-        return ingredientsName;
-})
+        .map((item) => item.innerText.trim());
+        console.log(ingredientResults)
+        return ingredientResults;
+});
 
 
 // Appliances Button searchBar 
