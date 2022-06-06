@@ -161,14 +161,6 @@ header .searchBarContainer .searchButton .fa-search {
 
 /* Sort Buttons Container */
 #ingredientsContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   background-color: #3282f7;
   max-height: 300px;
   width: 35rem;
@@ -181,26 +173,22 @@ header .searchBarContainer .searchButton .fa-search {
 #ingredientsContainer .ingredientsContent {
   /* Dropdown Content (Hidden by Default) */
   display: none;
-  margin: 0;
-  padding: 20px;
-  width: 11rem;
-  height: 0.5rem;
 }
 
 #ingredientsContainer .ingredientsOption {
   color: white;
   font-weight: 700;
-  text-decoration: none;
   letter-spacing: 1px;
   cursor: pointer;
-  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 12px;
+  width: 10rem;
+  height: 2.5rem;
 }
 
 #ingredientsContainer .show {
   display: block;
-}
-
-#appliancesContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -209,6 +197,9 @@ header .searchBarContainer .searchButton .fa-search {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+#appliancesContainer {
   background-color: #68d9a4;
   max-height: 300px;
   width: 35rem;
@@ -221,26 +212,22 @@ header .searchBarContainer .searchButton .fa-search {
 #appliancesContainer .appliancesContent {
   /* Dropdown Content (Hidden by Default) */
   display: none;
-  margin: 0;
-  padding: 20px;
-  width: 11rem;
-  height: 0.5rem;
 }
 
 #appliancesContainer .appliancesOption {
   color: white;
   font-weight: 700;
-  text-decoration: none;
-  display: block;
   letter-spacing: 1px;
   cursor: pointer;
+  list-style-type: none;
+  margin: 0;
+  padding: 12px;
+  width: 10rem;
+  height: 2.5rem;
 }
 
 #appliancesContainer .show {
   display: block;
-}
-
-#ustensilsContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -249,6 +236,9 @@ header .searchBarContainer .searchButton .fa-search {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+#ustensilsContainer {
   background-color: #ed6454;
   max-height: 300px;
   width: 35rem;
@@ -261,23 +251,30 @@ header .searchBarContainer .searchButton .fa-search {
 #ustensilsContainer .ustensilsContent {
   /* Dropdown Content (Hidden by Default) */
   display: none;
-  margin: 0;
-  padding: 20px;
-  width: 11rem;
-  height: 0.5rem;
 }
 
 #ustensilsContainer .ustensilsOption {
   color: white;
   font-weight: 700;
-  text-decoration: none;
-  display: block;
   letter-spacing: 1px;
   cursor: pointer;
+  list-style-type: none;
+  margin: 0;
+  padding: 12px;
+  width: 10rem;
+  height: 2.5rem;
 }
 
 #ustensilsContainer .show {
   display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 /* Recipe cards */

@@ -1,15 +1,23 @@
 import recipes from "../recipes.js";
 import display from "./display.js";
 
+
+
+const formatIngredientString = (i) => {
+  let g = i.toLowerCase();
+  return `${i[0].toUpperCase()}${g.slice(1)}`;  
+};
+
+
 export class Filters {
   recipeList = recipes;
   filteredRecipes = [];
-  filteredRecipesIngredients = [];
+  filteredRecipesIngredients = []
   filteredRecipesAppliances = [];
   filteredRecipesUstensils = [];
   tags = [];
-  selectedTags = []; // to use in removeTag ? 
   searchItem = "";
+
 
   inputFilter = (input) => {
     let searchItem = input && input.toLowerCase();
@@ -31,6 +39,7 @@ export class Filters {
     );
     return this.filteredRecipes;
   };
+
 
   filterInputs = (value) => {
     this.searchItem = value
@@ -56,6 +65,7 @@ export class Filters {
     }
   };
 
+
   addTag = (tag) => {
     if (this.tags.includes(tag)) {
       return;
@@ -65,7 +75,7 @@ export class Filters {
     this.displayRecipes();
   };
 
-        // WHEN CLICKED ON => Remove the "selectedTag" from the array ? => pop best way ?
+
   removeTag = (tag) => {
     this.tags = this.tags.filter((item) => {
       return item.toLowerCase() !== tag.toLowerCase();
@@ -74,13 +84,55 @@ export class Filters {
     this.displayRecipes();
   }
 
-  displayRecipes = () => display.displayRecipes(this.filteredRecipes);
+
+
+  getIngredients = () => {
+    this.filteredRecipesIngredients = 
+      [ ...new Set(
+        this.filteredRecipes.flatMap((recipe) =>
+        recipe.ingredients.map((r) => formatIngredientString (r.ingredient))
+        )
+    )];
+  }
+
+
+  getAppliances = () => {
+    this.filteredRecipesAppliances = 
+    [...new Set(
+      recipes.map((recipe) => formatIngredientString (recipe.appliance))
+      )];
+  }
+
+
+  getUstensils = () => {
+    this.filteredRecipesUstensils =
+    [...new Set(
+      recipes.flatMap((recipe) => recipe.ustensils)
+      )];
+  }
+
+
+  displayRecipes = () => {
+
+    display.displayRecipes(this.filteredRecipes),
+    this.getIngredients(),
+    this.getAppliances(),
+    this.getUstensils();
+
+    // ======================= closes the ul when first tag is clicked on and can't select a second one ===================================
+
+    // display.displayIngredientsButton(this.filteredRecipesIngredients);
+    // display.displayAppliancesButton(this.filteredRecipesAppliances)
+    // display.displayUstensilsButton(this.filteredRecipesUstensils)
+
+// ======================= closes the ul when first tag is clicked on and can't select a second one ===================================
+
+  };
 
 }
 
 let filter = new Filters();
 export default filter;
-
 
 
 

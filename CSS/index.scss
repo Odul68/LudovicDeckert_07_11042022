@@ -155,9 +155,6 @@ header {
 /* Sort Buttons Container */
 
 #ingredientsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     background-color: $color-fourth;
     max-height: 300px;
     width: 35rem;
@@ -170,30 +167,31 @@ header {
     .ingredientsContent {
         /* Dropdown Content (Hidden by Default) */
         display: none;
-        margin: 0;
-        padding: 20px;
-        width: 11rem;
-        height: 0.5rem;
+        
     }
 
     .ingredientsOption {
         color: white;
         font-weight: 700;
-        text-decoration: none;
         letter-spacing: 1px;
         cursor: pointer;
-        overflow: hidden;
+        list-style-type: none;
+        margin: 0;
+        padding: 12px;
+        width: 10rem;
+        height: 2.5rem;
+
     }
 
     .show {
         display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
 
 #appliancesContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     background-color: $color-fifth;
     max-height: 300px;
     width: 35rem;
@@ -206,30 +204,31 @@ header {
     .appliancesContent {
         /* Dropdown Content (Hidden by Default) */
         display: none;
-        margin: 0;
-        padding: 20px;
-        width: 11rem;
-        height: 0.5rem;
+
     }
 
     .appliancesOption {
         color: white;
         font-weight: 700;
-        text-decoration: none;
-        display: block;
         letter-spacing: 1px;
         cursor: pointer;
+        list-style-type: none;
+        margin: 0;
+        padding: 12px;
+        width: 10rem;
+        height: 2.5rem;
+
     }
 
     .show {
         display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
 
 #ustensilsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     background-color: $color-sixth;
     max-height: 300px;
     width: 35rem;
@@ -242,23 +241,27 @@ header {
     .ustensilsContent {
         /* Dropdown Content (Hidden by Default) */
         display: none;
-        margin: 0;
-        padding: 20px;
-        width: 11rem;
-        height: 0.5rem;
+
     }
 
     .ustensilsOption {
         color: white;
         font-weight: 700;
-        text-decoration: none;
-        display: block;
         letter-spacing: 1px;
         cursor: pointer;
+        list-style-type: none;
+        margin: 0;
+        padding: 12px;
+        width: 10rem;
+        height: 2.5rem;
+
         }
 
     .show {
         display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
 

@@ -90,53 +90,49 @@ export class Display {
 
 
     displayIngredientsButton = (ingredients) => {
+
         const ingredientsContainer = document.querySelector("#ingredientsContainer");
-        ingredientsContainer.innerHTML = "";
-        for(let ingredient of ingredients) {
-            const element = document.createElement("div");
-            element.innerHTML = `
+
+            ingredientsContainer.innerHTML = `
           <ul id="ingredientsList" class="ingredientsContent" role="listbox"> 
-              <li class="ingredientsOption " role="option">${ingredient}</li>
+            ${ingredients.map(
+                (ingredient) => 
+                `<li class="ingredientsOption " role="option">${ingredient}</li>`
+            )}
           </ul>
             `;
-            ingredientsContainer.appendChild(element);
-    
-        }
-    };
+        };
 
 
     displayAppliancesButton = (appliances) => {
+
         const appliancesContainer = document.querySelector("#appliancesContainer");
-        appliancesContainer.innerHTML = "";
-        for(let appliance of appliances) {
-            const element = document.createElement("div");
-            element.innerHTML = `
+
+        appliancesContainer.innerHTML = `
           <ul id="appliancesList" class="appliancesContent" role="listbox"> 
-              <li class="appliancesOption" role="option">${appliance}</li>
+            ${appliances.map(
+                (appliance) =>
+                `<li class="appliancesOption" role="option">${appliance}</li>`
+            )}  
           </ul>
             `;
-            appliancesContainer.appendChild(element);
-    
-        }
-    };
+        };
 
     displayUstensilsButton = (ustensils) => {
+
         const ustensilsContainer = document.querySelector("#ustensilsContainer");
-        ustensilsContainer.innerHTML = "";
-        for(let ustensil of ustensils) {
-            const element = document.createElement("div");
-            element.innerHTML = `
+
+        ustensilsContainer.innerHTML = `
           <ul id="ustensilsList" class="ustensilsContent" role="listbox"> 
-              <li class="ustensilsOption" role="option">${ustensil}</li>
+            ${ustensils.map(
+                (ustensil) => 
+                `<li class="ustensilsOption" role="option">${ustensil}</li>`
+            )}
           </ul>
             `;
-            ustensilsContainer.appendChild(element);
+        };   
     
-        }
-    };
-}    
-    
-
+};
 
 
 let display = new Display();
@@ -144,4 +140,3 @@ export default display;
 display.displayIngredientsButton(ingredients);
 display.displayAppliancesButton(appliances)
 display.displayUstensilsButton(ustensils)
-

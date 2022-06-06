@@ -75,6 +75,7 @@ Array.from(ustensilOption).forEach((item) => {
         filter.addTag(item.innerText)
     
         ustensilNewTag.addEventListener("click", () => {
+            ustensilNewTag.remove()
             filter.removeTag();
             filter.displayRecipes(recipes)
         })
@@ -90,7 +91,7 @@ Array.from(ustensilOption).forEach((item) => {
 const ingredientsSearchInput = document.querySelector(".sortBtnIngredients")
 
 ingredientsSearchInput.addEventListener("keyup", (e) => {
-    let ingredientsName = document.querySelectorAll(".ingredientsContent")
+    let ingredientsName = document.querySelectorAll(".ingredientsOption")
 
         let searchIngredientsName = e.target.value.toLowerCase();
         const ingredientResults = Array.from(ingredientsName)
@@ -100,7 +101,7 @@ ingredientsSearchInput.addEventListener("keyup", (e) => {
         )
         .map((item) => item.innerText.trim());
         console.log(ingredientResults)
-        return ingredientResults;
+        return filter.getIngredients(ingredientResults);
 });
 
 
@@ -109,7 +110,7 @@ ingredientsSearchInput.addEventListener("keyup", (e) => {
 const appliancesSearchInput = document.querySelector(".sortBtnAppliances")
 
 appliancesSearchInput.addEventListener("keyup", (e) => {
-    let appliancesName = document.querySelectorAll(".appliancesContent")
+    let appliancesName = document.querySelectorAll(".appliancesContent") 
 
     if(e.target.value.length > 2) {
         let searchAppliancesName = e.target.value.toLowerCase();
