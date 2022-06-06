@@ -93,13 +93,14 @@ export class Filters {
         recipe.ingredients.map((r) => formatIngredientString (r.ingredient))
         )
     )];
+    this.filteredRecipes;
   }
 
 
   getAppliances = () => {
     this.filteredRecipesAppliances = 
     [...new Set(
-      recipes.map((recipe) => formatIngredientString (recipe.appliance))
+      recipes.map((recipe) => recipe.appliance)
       )];
   }
 
@@ -121,7 +122,7 @@ export class Filters {
 
     // ======================= closes the ul when first tag is clicked on and can't select a second one ===================================
 
-    // display.displayIngredientsButton(this.filteredRecipesIngredients);
+    display.displayIngredientsButton(this.filteredRecipesIngredients);
     // display.displayAppliancesButton(this.filteredRecipesAppliances)
     // display.displayUstensilsButton(this.filteredRecipesUstensils)
 

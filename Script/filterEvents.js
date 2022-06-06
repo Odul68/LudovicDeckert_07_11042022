@@ -101,7 +101,7 @@ ingredientsSearchInput.addEventListener("keyup", (e) => {
         )
         .map((item) => item.innerText.trim());
         console.log(ingredientResults)
-        return filter.getIngredients(ingredientResults);
+        return ingredientResults;
 });
 
 
@@ -110,23 +110,18 @@ ingredientsSearchInput.addEventListener("keyup", (e) => {
 const appliancesSearchInput = document.querySelector(".sortBtnAppliances")
 
 appliancesSearchInput.addEventListener("keyup", (e) => {
-    let appliancesName = document.querySelectorAll(".appliancesContent") 
+    let appliancesName = document.querySelectorAll(".appliancesOption") 
 
-    if(e.target.value.length > 2) {
         let searchAppliancesName = e.target.value.toLowerCase();
-        appliancesName.forEach((item) => {
-            if(item.textContent.toLowerCase().indexOf(searchAppliancesName) !== -1){
-                item.closest("ul").style.display = "block";
-            } else {
-                item.closest("ul").style.display = "none";
-            }
-        });
-    } else {
-        appliancesName.forEach((item) =>{
-            item.closest("ul").style.display = "block";
-        })
-    }
-})
+        const applianceResults = Array.from(appliancesName)
+        .filter(
+            (item) =>
+                item.innerText.toLowerCase().indexOf(searchAppliancesName) !== -1
+        )
+        .map((item) => item.innerText.trim());
+        console.log(applianceResults)
+        return applianceResults;
+});
 
 
 // Ustensils Button searchBar 
@@ -134,20 +129,16 @@ appliancesSearchInput.addEventListener("keyup", (e) => {
 const ustensilsSearchInput = document.querySelector(".sortBtnUstensils")
 
 ustensilsSearchInput.addEventListener("keyup", (e) => {
-    let ustensilsName = document.querySelectorAll(".ustensilsContent")
+    let ustensilsName = document.querySelectorAll(".ustensilsOption")
 
-    if(e.target.value.length > 2) {
+
         let searchUstensilsName = e.target.value.toLowerCase();
-        ustensilsName.forEach((item) => {
-            if(item.textContent.toLowerCase().indexOf(searchUstensilsName) !== -1){
-                item.closest("ul").style.display = "block";
-            } else {
-                item.closest("ul").style.display = "none";
-            }
-        });
-    } else {
-        ustensilsName.forEach((item) =>{
-            item.closest("ul").style.display = "block";
-        })
-    }
-})
+        const ustensilResults = Array.from(ustensilsName)
+        .filter(
+            (item) => 
+                item.innerText.toLowerCase().indexOf(searchUstensilsName) !== -1
+        )
+        .map((item) => item.innerText.trim());
+        console.log(ustensilResults)
+        return ustensilResults;
+});
