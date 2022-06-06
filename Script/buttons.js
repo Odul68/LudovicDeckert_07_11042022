@@ -8,10 +8,9 @@ import filter from "./filters.js";
 const ingredientsBtn = document.querySelector("#arrowIngredients");
 
 ingredientsBtn.addEventListener("click", () => {
-      const i = filter.filteredRecipes
-      Array.from(i).forEach((item) => 
-      item.display.displayIngredientsButton(i).classList.toggle("show"))   
-
+      // const i = filter.filteredRecipes
+      // Array.from(i).forEach((item) => 
+      // item.display.displayIngredientsButton(i))   
 
   document.querySelector(".ingredientsContent").classList.toggle("show");  
   document.getElementById("arrowIngredients").classList.toggle("active");

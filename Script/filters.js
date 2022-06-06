@@ -123,8 +123,8 @@ export class Filters {
     // ======================= closes the ul when first tag is clicked on and can't select a second one ===================================
 
     display.displayIngredientsButton(this.filteredRecipesIngredients);
-    // display.displayAppliancesButton(this.filteredRecipesAppliances)
-    // display.displayUstensilsButton(this.filteredRecipesUstensils)
+    display.displayAppliancesButton(this.filteredRecipesAppliances)
+    display.displayUstensilsButton(this.filteredRecipesUstensils)
 
 // ======================= closes the ul when first tag is clicked on and can't select a second one ===================================
 
