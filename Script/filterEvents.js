@@ -54,7 +54,7 @@ Array.from(applianceOption).forEach((item) => {
     
         applianceNewTag.addEventListener("click", () => {
             applianceNewTag.remove()
-            filter.removeTag();
+            filter.removeTag(applianceNewTag.innerText);
             filter.displayRecipes(recipes)
         })
     })
@@ -76,7 +76,7 @@ Array.from(ustensilOption).forEach((item) => {
     
         ustensilNewTag.addEventListener("click", () => {
             ustensilNewTag.remove()
-            filter.removeTag();
+            filter.removeTag(ustensilNewTag.innerText);
             filter.displayRecipes(recipes)
         })
     })
