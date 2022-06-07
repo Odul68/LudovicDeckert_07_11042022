@@ -89,6 +89,7 @@ Array.from(ustensilOption).forEach((item) => {
 // Ingredients Button searchBar 
 
 const ingredientsSearchInput = document.querySelector(".sortBtnIngredients")
+let btnIngredientsContainer = document.querySelector(".ingredientsContent")
 
 ingredientsSearchInput.addEventListener("keyup", (e) => {
     let ingredientsName = document.querySelectorAll(".ingredientsOption")
@@ -100,8 +101,14 @@ ingredientsSearchInput.addEventListener("keyup", (e) => {
                 item.innerText.toLowerCase().indexOf(searchIngredientsName) !== -1
         )
         .map((item) => item.innerText.trim());
+
+// ===============================   works but to double check about the display...same problem when tag is selected  ========================      
         console.log(ingredientResults)
-        return ingredientResults;
+        return display.displayIngredientsButton(ingredientResults); 
+
+// ===============================   works but to double check about the display...same problem when tag is selected  ========================      
+
+
 });
 
 
@@ -120,7 +127,7 @@ appliancesSearchInput.addEventListener("keyup", (e) => {
         )
         .map((item) => item.innerText.trim());
         console.log(applianceResults)
-        return applianceResults;
+        return display.displayAppliancesButton(applianceResults);
 });
 
 
@@ -140,5 +147,5 @@ ustensilsSearchInput.addEventListener("keyup", (e) => {
         )
         .map((item) => item.innerText.trim());
         console.log(ustensilResults)
-        return ustensilResults;
+        return display.displayUstensilsButton(ustensilResults);
 });

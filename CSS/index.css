@@ -188,7 +188,6 @@ header .searchBarContainer .searchButton .fa-search {
 }
 
 #ingredientsContainer .show {
-  display: block;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -227,7 +226,6 @@ header .searchBarContainer .searchButton .fa-search {
 }
 
 #appliancesContainer .show {
-  display: block;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -266,7 +264,6 @@ header .searchBarContainer .searchButton .fa-search {
 }
 
 #ustensilsContainer .show {
-  display: block;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

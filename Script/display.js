@@ -1,5 +1,5 @@
 import recipes from "../recipes.js"
-import filter from "./filters.js"
+// import filter from "./filters.js"
 
 
 
@@ -23,7 +23,7 @@ const appliances = [
   
 // ustensils button
 
-// const formatUstensilString = (i) => {
+// const formatUstensilString = (i) => { 
 //     let g = i.toString().toLowerCase();
 //     console.log(i)
 //     return `${i[0].toUpperCase()}${g.slice(0)}`;  
@@ -47,9 +47,12 @@ const ustensils = [
 export class Display {
 
 
-    init = () => {
-        this.displayRecipes(recipes)
-    }
+    // init = () => {
+    //     this.displayRecipes(recipes)
+    //     this.displayIngredientsButton(ingredients)
+    //     this.displayAppliancesButton(appliances)
+    //     this.displayUstensilsButton(ustensils)
+    // }
 
 
     displayRecipes = (recipes) => {  // display card with Name, cooking time, ingredients and description
@@ -137,6 +140,7 @@ export class Display {
 
 let display = new Display();
 export default display;
+display.displayRecipes(recipes);
 display.displayIngredientsButton(ingredients);
 display.displayAppliancesButton(appliances)
 display.displayUstensilsButton(ustensils)
