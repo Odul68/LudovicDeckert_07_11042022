@@ -2,7 +2,7 @@ import recipes from "../recipes.js";
 import display from "./display.js";
 
 
-
+// Format options for the filteredRecipes
 const formatIngredientString = (i) => {
   let g = i.toLowerCase();
   return `${i[0].toUpperCase()}${g.slice(1)}`;  
@@ -17,9 +17,12 @@ export class Filters {
   filteredRecipesUstensils = [];
   tags = [];
   searchItem = "";
+ 
+
+// Filter all recipes by input and display the mathing ones
 
 
-  inputFilter = (input) => {
+  inputFilter = (input) => { 
     let searchItem = input && input.toLowerCase();
     this.searchItem = searchItem ;
     if (!this.searchItem) {
@@ -41,7 +44,10 @@ export class Filters {
   };
 
 
-  filterInputs = (value) => {
+// Filter all recipes by tag ingredients, appliances or ustensils   
+
+
+  filterInputs = (value) => { 
     this.searchItem = value
     let filteredRecipesinit = this.inputFilter(value);
 
@@ -66,6 +72,9 @@ export class Filters {
   };
 
 
+// When a tag is added => filterInputs to filter all recipes
+
+
   addTag = (tag) => {
     if (this.tags.includes(tag)) {
       return;
@@ -76,6 +85,9 @@ export class Filters {
   };
 
 
+ // When a tag is removed => filterInputs to filter all recipes already filtered or not and keeps the previous filter
+ 
+
   removeTag = (tag) => {
     this.tags = this.tags.filter((item) => {
       return item.toLowerCase() !== tag.toLowerCase();
@@ -85,6 +97,8 @@ export class Filters {
   }
 
 
+// Update the INGREDIENTS list in the Dropdown button once a search has already been entered
+
 
   getIngredients = () => {
     this.filteredRecipesIngredients = 
@@ -93,8 +107,10 @@ export class Filters {
         recipe.ingredients.map((r) => formatIngredientString (r.ingredient))
         )
     )];
-    this.filteredRecipes;
   }
+
+
+// Update the APPLIANCES list in the Dropdown button once a search has already been entered
 
 
   getAppliances = () => {
@@ -105,6 +121,9 @@ export class Filters {
   }
 
 
+// Update the USTENSILS list in the Dropdown button once a search has already been entered
+
+
   getUstensils = () => {
     this.filteredRecipesUstensils =
     [...new Set(
@@ -113,17 +132,23 @@ export class Filters {
   }
 
 
+// Display the filtered recipes and the new lists in the Dropdown buttons
+
+
   displayRecipes = () => {
 
     display.displayRecipes(this.filteredRecipes),
     this.getIngredients(),
     this.getAppliances(),
-    this.getUstensils();
+    this.getUstensils(),
 
     // ======================= closes the ul when first tag is clicked on and can't select a second one ===================================
 
     display.displayIngredientsButton(this.filteredRecipesIngredients);
-    // display.displayAppliancesButton(this.filteredRecipesAppliances),
+    // document.querySelector(".ingredientsContent").classList.toggle("show");  
+
+
+    display.displayAppliancesButton(this.filteredRecipesAppliances);
     // display.displayUstensilsButton(this.filteredRecipesUstensils);
 
 // ======================= closes the ul when first tag is clicked on and can't select a second one ===================================
