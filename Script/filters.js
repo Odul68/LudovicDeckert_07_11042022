@@ -76,12 +76,13 @@ export class Filters {
 
 
   addTag = (tag) => {
-    if (this.tags.includes(tag)) {
-      return;
+    if (this.tags.includes(tag.toLowerCase())) {
+      return false;
     }
     this.tags = [...this.tags, tag.toLowerCase()];
     this.filterInputs(this.searchItem);
     this.displayRecipes();
+    return true;
   };
 
 
@@ -137,22 +138,15 @@ export class Filters {
 
   displayRecipes = () => {
 
-    display.displayRecipes(this.filteredRecipes),
-    this.getIngredients(),
-    this.getAppliances(),
-    this.getUstensils(),
+    display.displayRecipes(this.filteredRecipes);
+    this.getIngredients();
+    this.getAppliances();
+    this.getUstensils();
 
-    // ======================= closes the ul when first tag is clicked on and can't select a second one ===================================
 
     display.displayIngredientsButton(this.filteredRecipesIngredients);
-    // document.querySelector(".ingredientsContent").classList.toggle("show");  
-
-
     display.displayAppliancesButton(this.filteredRecipesAppliances);
-    // display.displayUstensilsButton(this.filteredRecipesUstensils);
-
-// ======================= closes the ul when first tag is clicked on and can't select a second one ===================================
-
+    display.displayUstensilsButton(this.filteredRecipesUstensils);
   };
 
 }

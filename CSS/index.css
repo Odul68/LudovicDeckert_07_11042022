@@ -374,6 +374,20 @@ header .searchBarContainer .searchButton .fa-search {
   color: white;
   border-radius: 5px;
   margin-right: 0.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tags .ingredientTag p {
+  margin: 0 6px 0 0;
+}
+
+.tags .ingredientTag .cross {
+  height: 20px;
+  width: 20px;
+  top: 2px;
+  left: 2px;
 }
 
 .tags .applianceTag {
@@ -382,6 +396,20 @@ header .searchBarContainer .searchButton .fa-search {
   color: white;
   border-radius: 5px;
   margin-right: 0.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tags .applianceTag p {
+  margin: 0 6px 0 0;
+}
+
+.tags .applianceTag .cross {
+  height: 20px;
+  width: 20px;
+  top: 2px;
+  left: 2px;
 }
 
 .tags .ustensilTag {
@@ -390,5 +418,19 @@ header .searchBarContainer .searchButton .fa-search {
   color: white;
   border-radius: 5px;
   margin-right: 0.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tags .ustensilTag p {
+  margin: 0 6px 0 0;
+}
+
+.tags .ustensilTag .cross {
+  height: 20px;
+  width: 20px;
+  top: 2px;
+  left: 2px;
 }
 /*# sourceMappingURL=index.css.map */
