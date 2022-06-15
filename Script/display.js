@@ -11,13 +11,13 @@ const formatIngredientString = (i) => {
 
 
 // Creates a new array of all INGREDIENTS
-const ingredients = [ ...new Set(
+const ingredients = [ 
+    ...new Set(
     recipes.flatMap((recipe) =>
     recipe.ingredients.map((r) => formatIngredientString (r.ingredient))
     )
 )
 ];
-console.log(ingredients)
 
 
 // Creates a new array of all APPLIANCES 
@@ -28,11 +28,11 @@ const appliances = [
 // Creates a new array of all USTENSILS   
 const ustensils = [
     ...new Set(
-        recipes.flatMap((recipe) => recipe.ustensils
+       recipes.flatMap((recipe) => 
+        recipe.ustensils.map((u) => formatIngredientString (u))
         )
     )
-]
-console.log(ustensils)
+];
 
 
 // Container for tags once clicked on option
