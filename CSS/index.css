@@ -366,6 +366,7 @@ header .searchBarContainer .searchButton .fa-search {
   display: -ms-flexbox;
   display: flex;
   margin: 0 2rem;
+  cursor: pointer;
 }
 
 .tags .ingredientTag {

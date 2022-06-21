@@ -106,14 +106,14 @@ export class Display {
                 ingredientNewTag.classList.add("ingredientTag");
                 ingredientNewTag.innerHTML = `
                 <p>${item.innerText}</p>
-                <img class="cross" src="../Assets/cross.png" alt="cross">`
+                <img class="cross" src="./Assets/cross.png" alt="cross">`
                 tagsContainer.appendChild(ingredientNewTag);
         
                 ingredientNewTag.addEventListener("click", (i) => { // Display recipes when one tag is removed
                     i.stopPropagation(); // Doesn't close the list container when clicked
                     ingredientNewTag.remove();
                     filter.removeTag(item.innerText);
-                    filter.displayRecipes(recipes)
+                    filter.displayRecipes(recipes);
                 })
             }
         })
@@ -146,7 +146,7 @@ export class Display {
                 applianceNewTag.classList.add("applianceTag");
                 applianceNewTag.innerHTML = `
                 <p>${item.innerText}</p>
-                <img class="cross" src="../Assets/cross.png" alt="cross">`   
+                <img class="cross" src="./Assets/cross.png" alt="cross">`   
                 tagsContainer.appendChild(applianceNewTag);
             
                 applianceNewTag.addEventListener("click", (a) => { // Display recipes when one tag is removed
@@ -186,7 +186,7 @@ export class Display {
                 ustensilNewTag.classList.add("ustensilTag");
                 ustensilNewTag.innerHTML = `
                 <p>${item.innerText}</p>
-                <img class="cross" src="../Assets/cross.png" alt="cross">`
+                <img class="cross" src="./Assets/cross.png" alt="cross">`
                 tagsContainer.appendChild(ustensilNewTag);
     
                 ustensilNewTag.addEventListener("click", (u) => { // Display recipes when one tag is removed

@@ -342,6 +342,7 @@ header {
 .tags {
     display: flex;
     margin: 0 2rem;
+    cursor: pointer;
 
     .ingredientTag {
         background-color: $color-fourth;

@@ -2,6 +2,7 @@ import display from "./display.js"
 import filter from "./filters.js"
 
 
+
 // Search is entered and goes to the filterInputs function
 
 
@@ -33,20 +34,31 @@ ingredientsSearchInput.addEventListener("keyup", (e) => {
 // Appliances Button searchBar  - search appliances in the button's list
 
 
-const appliancesSearchInput = document.querySelector(".sortBtnAppliances")
+// ========================= TO CHECK LATER +++/////////// ++++++++++==================================
 
-appliancesSearchInput.addEventListener("keyup", (e) => {
-    let appliancesName = document.querySelectorAll(".appliancesOption") 
+// const appliancesSearchInput = document.querySelector(".sortBtnAppliances")
 
-        let searchAppliancesName = e.target.value.toLowerCase();
-        const applianceResults = Array.from(appliancesName)
-        .filter(
-            (item) =>
-                item.innerText.toLowerCase().indexOf(searchAppliancesName) !== -1
-        )
-        .map((item) => item.innerText.trim());
-        return display.displayAppliancesButton(applianceResults);
-});
+// appliancesSearchInput.addEventListener("keyup", (e) => {
+
+//     let appliancesName = document.querySelectorAll(".appliancesOption") 
+//     console.log(appliancesName)
+
+//         let searchAppliancesName = e.target.value.toLowerCase();
+
+//         if(searchAppliancesName.toLowerCase() > 2){
+//             console.log(searchAppliancesName)
+//             const applianceResults = Array.from(appliancesName)
+//             .filter(
+//                 (item) =>
+//                     item.innerText.toLowerCase().indexOf(searchAppliancesName) !== -1
+//             )
+//             .map((item) => item.innerText.trim());
+//             return display.displayAppliancesButton(applianceResults);
+//         } else {
+//             return "yooooo";
+//         }
+
+// });
 
 
 // Ustensils Button searchBar - search ustensils in the button's list

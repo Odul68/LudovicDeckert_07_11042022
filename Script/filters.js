@@ -22,26 +22,65 @@ export class Filters {
 // Filter all recipes by input and display the mathing ones
 
 
-  inputFilter = (input) => { 
-    let searchItem = input && input.toLowerCase();
-    this.searchItem = searchItem ;
-    if (!this.searchItem) {
-      return this.recipeList;
+  // inputFilter = (input) => { 
+  //   let searchItem = input && input.toLowerCase();
+  //   this.searchItem = searchItem ;
+  //   if (!this.searchItem) {
+  //     return this.recipeList;
+  //   }
+
+  //   this.filteredRecipes = this.recipeList.filter(
+
+  //     (item) =>
+  //       item.name.toLowerCase().indexOf(searchItem) !== -1 ||
+  //       item.description.toLowerCase().indexOf(searchItem) !== -1 ||
+  //       item.ustensils.indexOf(searchItem) !== -1 ||
+  //       item.appliance.toLowerCase().indexOf(searchItem) !== -1 ||
+  //       item.ingredients
+  //         .map((ingre) => ingre.ingredient.toLowerCase())
+  //         .indexOf(searchItem) !== -1
+  //   );
+  //   return this.filteredRecipes;
+  // };
+
+
+
+// +++++++++++++++++++++++++++++++++++ TRIAL FOR OTHER BRANCH ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+inputFilter = (input) => {
+
+  let searchItem = input && input.toLowerCase();
+      this.searchItem = searchItem ;
+    // if (!this.searchItem) {
+    //   return this.recipeList;
+    // }
+
+
+for (let i = 0; i < recipes.length; i++) {
+  const {name, ingredients, description} = recipes[i];
+  const recipeName = name.toLowerCase().includes(searchItem.toLowerCase());
+  const recipeDescription = description.toLowerCase().includes(searchItem.toLowerCase());
+  let recipeIngredients = false;
+  for (let y = 0; y < ingredients.length; y++) {
+    if (ingredients[y].ingredient.toLowerCase().includes(searchItem.toLowerCase())){
+      recipeIngredients = true;
     }
+  }
+  if (recipeName || recipeDescription || recipeIngredients){
+    this.filteredRecipes.push(recipes[i]);
+  }
+ }
+}
 
-    this.filteredRecipes = this.recipeList.filter(
 
-      (item) =>
-        item.name.toLowerCase().indexOf(searchItem) !== -1 ||
-        item.description.toLowerCase().indexOf(searchItem) !== -1 ||
-        item.ustensils.indexOf(searchItem) !== -1 ||
-        item.appliance.toLowerCase().indexOf(searchItem) !== -1 ||
-        item.ingredients
-          .map((ingre) => ingre.ingredient.toLowerCase())
-          .indexOf(searchItem) !== -1
-    );
-    return this.filteredRecipes;
-  };
+
+// +++++++++++++++++++++++++++++++++++ TRIAL FOR OTHER BRANCH ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
 
 
 // Filter all recipes by tag ingredients, appliances or ustensils   
@@ -117,7 +156,7 @@ export class Filters {
   getAppliances = () => {
     this.filteredRecipesAppliances = 
     [...new Set(
-      recipes.map((recipe) => recipe.appliance)
+      this.filteredRecipes.map((recipe) => formatIngredientString(recipe.appliance))
       )];
   }
 
@@ -128,7 +167,9 @@ export class Filters {
   getUstensils = () => {
     this.filteredRecipesUstensils =
     [...new Set(
-      recipes.flatMap((recipe) => recipe.ustensils)
+      this.filteredRecipes.flatMap((recipe) => 
+      recipe.ustensils.map((u) => formatIngredientString (u))
+      )
       )];
   }
 
@@ -153,6 +194,7 @@ export class Filters {
 
 let filter = new Filters();
 export default filter;
+
 
 
 
