@@ -1,82 +1,48 @@
 import display from "./display.js"
-import filter from "./filters.js"
-
+import recipes from "../recipes.js";
 
 
 // Search is entered and goes to the filterInputs function
 
 
-searchInput.addEventListener("keyup", function (e) {
-        filter.filterInputs(e.target.value);
-        filter.displayRecipes();
-    });
+
+const searchInput = document.querySelector("#searchInput") 
+searchInput.addEventListener("keyup", function () {
+
+    let searchItem = searchInput.value.toLowerCase(); 
+
+    const filteredRecipes = []
+      
+      
+      for (let i = 0; i < recipes.length; i++) {
+
+        const {name, ingredients, description} = recipes[i];
+
+        const recipeName = name.toLowerCase().includes(searchItem.toLowerCase());
+
+        const recipeDescription = description.toLowerCase().includes(searchItem.toLowerCase());
+
+        let recipeIngredients = false;
+        for (let y = 0; y < ingredients.length; y++) {
+          if (ingredients[y].ingredient.toLowerCase().includes(searchItem.toLowerCase())){
+            recipeIngredients = true;
+          }
+        }
+
+        if (recipeName || recipeDescription || recipeIngredients){
+            filteredRecipes.push(recipes[i]); // Pushes the recipes that matches in "filteredRecipes"
+            display.displayRecipes(filteredRecipes); // Gives the filteredRecipes to display in the display Class
+        }
+       }
+    }
+);
 
 
-// Ingredients Button searchBar  - search ingredients in the button's list
 
 
-const ingredientsSearchInput = document.querySelector(".sortBtnIngredients")
-
-ingredientsSearchInput.addEventListener("keyup", (e) => {
-    let ingredientsName = document.querySelectorAll(".ingredientsOption")
-
-        let searchIngredientsName = e.target.value.toLowerCase();
-        const ingredientResults = Array.from(ingredientsName)
-        .filter(
-            (item) => 
-                item.innerText.toLowerCase().indexOf(searchIngredientsName) !== -1
-        )
-        .map((item) => item.innerText.trim());
-        return display.displayIngredientsButton(ingredientResults); 
-});
 
 
-// Appliances Button searchBar  - search appliances in the button's list
 
 
-// ========================= TO CHECK LATER +++/////////// ++++++++++==================================
-
-// const appliancesSearchInput = document.querySelector(".sortBtnAppliances")
-
-// appliancesSearchInput.addEventListener("keyup", (e) => {
-
-//     let appliancesName = document.querySelectorAll(".appliancesOption") 
-//     console.log(appliancesName)
-
-//         let searchAppliancesName = e.target.value.toLowerCase();
-
-//         if(searchAppliancesName.toLowerCase() > 2){
-//             console.log(searchAppliancesName)
-//             const applianceResults = Array.from(appliancesName)
-//             .filter(
-//                 (item) =>
-//                     item.innerText.toLowerCase().indexOf(searchAppliancesName) !== -1
-//             )
-//             .map((item) => item.innerText.trim());
-//             return display.displayAppliancesButton(applianceResults);
-//         } else {
-//             return "yooooo";
-//         }
-
-// });
-
-
-// Ustensils Button searchBar - search ustensils in the button's list
-
-
-const ustensilsSearchInput = document.querySelector(".sortBtnUstensils")
-
-ustensilsSearchInput.addEventListener("keyup", (e) => {
-    let ustensilsName = document.querySelectorAll(".ustensilsOption")
-
-        let searchUstensilsName = e.target.value.toLowerCase();
-        const ustensilResults = Array.from(ustensilsName)
-        .filter(
-            (item) => 
-                item.innerText.toLowerCase().indexOf(searchUstensilsName) !== -1
-        )
-        .map((item) => item.innerText.trim());
-        return display.displayUstensilsButton(ustensilResults);
-});
 
 

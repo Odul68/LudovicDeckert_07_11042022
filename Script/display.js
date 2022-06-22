@@ -1,5 +1,4 @@
 import recipes from "../recipes.js"
-import filter from "./filters.js";
 
 
 
@@ -37,6 +36,7 @@ const ustensils = [
 
 // Container for tags once clicked on option
 const tagsContainer = document.querySelector(".tags")
+
 
 
 
@@ -91,34 +91,8 @@ export class Display {
                 (ingredient) => 
                 `<li class="ingredientsOption" role="option">${ingredient}</li>`
             ).join("")}
-            `;
- 
-            
-        const ingredientOption = document.querySelectorAll(".ingredientsOption")
-        Array.from(ingredientOption).forEach((item) => { // When cliked on the option, it creates a tag in the "tagsContainer"
-        item.addEventListener("click", (i) => {
-
-            i.stopPropagation(); // Doesn't close the list container when clicked
-
-            const filterTags = filter.addTag(item.innerText) // Goes through the class Filters to filter recipes and display the corresponding ones
-            if (filterTags) {
-                const ingredientNewTag = document.createElement("div");
-                ingredientNewTag.classList.add("ingredientTag");
-                ingredientNewTag.innerHTML = `
-                <p>${item.innerText}</p>
-                <img class="cross" src="./Assets/cross.png" alt="cross">`
-                tagsContainer.appendChild(ingredientNewTag);
-        
-                ingredientNewTag.addEventListener("click", (i) => { // Display recipes when one tag is removed
-                    i.stopPropagation(); // Doesn't close the list container when clicked
-                    ingredientNewTag.remove();
-                    filter.removeTag(item.innerText);
-                    filter.displayRecipes(recipes);
-                })
-            }
-        })
-    });      
-};
+            `;     
+    };
 
 
 
@@ -132,33 +106,7 @@ export class Display {
                 `<li class="appliancesOption" role="option">${appliance}</li>`
             ).join("")}  
             `;
-
-
-        const applianceOption = document.querySelectorAll(".appliancesOption")
-        Array.from(applianceOption).forEach((item) => { // When cliked on the option, it creates a tag in the "tagsContainer"
-        item.addEventListener("click", (a) => {
-
-            a.stopPropagation(); // Doesn't close the list container when clicked
-
-            const filterTags = filter.addTag(item.innerText) // Goes through the class Filters to filter recipes and display the corresponding ones
-            if (filterTags) {
-                const applianceNewTag = document.createElement("div");
-                applianceNewTag.classList.add("applianceTag");
-                applianceNewTag.innerHTML = `
-                <p>${item.innerText}</p>
-                <img class="cross" src="./Assets/cross.png" alt="cross">`   
-                tagsContainer.appendChild(applianceNewTag);
-            
-                applianceNewTag.addEventListener("click", (a) => { // Display recipes when one tag is removed
-                    a.stopPropagation(); // Doesn't close the list container when clicked
-                    applianceNewTag.remove()
-                    filter.removeTag(item.innerText);
-                    filter.displayRecipes(recipes)
-                })
-            }
-        })
-    });
-};
+    };
 
 
         
@@ -172,33 +120,7 @@ export class Display {
                 `<li class="ustensilsOption" role="option">${ustensil}</li>`
             ).join("")}
             `;
-
-
-        const ustensilOption = document.querySelectorAll(".ustensilsOption")
-        Array.from(ustensilOption).forEach((item) => { // When cliked on the option, it creates a tag in the "tagsContainer"
-        item.addEventListener("click", (u) => {
-
-            u.stopPropagation(); // Doesn't close the list container when clicked
-
-            const filterTags = filter.addTag(item.innerText) // Goes through the class Filters to filter recipes and display the corresponding ones
-            if (filterTags) {
-                const ustensilNewTag = document.createElement("div");
-                ustensilNewTag.classList.add("ustensilTag");
-                ustensilNewTag.innerHTML = `
-                <p>${item.innerText}</p>
-                <img class="cross" src="./Assets/cross.png" alt="cross">`
-                tagsContainer.appendChild(ustensilNewTag);
-    
-                ustensilNewTag.addEventListener("click", (u) => { // Display recipes when one tag is removed
-                    u.stopPropagation(); // Doesn't close the list container when clicked
-                    ustensilNewTag.remove()
-                    filter.removeTag(item.innerText);
-                    filter.displayRecipes(recipes)
-                })
-            }
-        })
-    });
-};   
+    };   
 
 };
 
