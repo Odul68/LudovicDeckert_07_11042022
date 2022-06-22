@@ -192,8 +192,8 @@ for (let i = 0; i < recipes.length; i++) {
 
 }
 
-let filter = new Filters();
-export default filter;
+// let filter = new Filters();
+// export default filter;
 
 
 
