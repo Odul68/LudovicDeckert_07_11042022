@@ -2,8 +2,12 @@ import display from "./display.js"
 import recipes from "../recipes.js";
 
 
-// Search is entered and goes to the filterInputs function
 
+// +++++++++++++++++++++++++++++++++++++++++++++++++++ ALGO 2 FOR LOOP +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+// Search is entered and goes into the for loop to filter recipes 
 
 
 const searchInput = document.querySelector("#searchInput") 
@@ -37,6 +41,9 @@ searchInput.addEventListener("keyup", function () {
     }
 );
 
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++ ALGO 2 FOR LOOP +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
