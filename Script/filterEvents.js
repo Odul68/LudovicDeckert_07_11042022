@@ -1,5 +1,6 @@
 import display from "./display.js"
 import filter from "./filters.js"
+import recipes from "../recipes.js"
 
 
 
@@ -31,34 +32,45 @@ ingredientsSearchInput.addEventListener("keyup", (e) => {
 });
 
 
+
+
+
+
+
+
+
+
+
+
 // Appliances Button searchBar  - search appliances in the button's list
 
 
 // ========================= TO CHECK LATER +++/////////// ++++++++++==================================
 
-// const appliancesSearchInput = document.querySelector(".sortBtnAppliances")
 
-// appliancesSearchInput.addEventListener("keyup", (e) => {
+const appliancesSearchInput = document.querySelector(".sortBtnAppliances")
 
-//     let appliancesName = document.querySelectorAll(".appliancesOption") 
-//     console.log(appliancesName)
+appliancesSearchInput.addEventListener("keyup", (e) => {
+    let appliancesName = document.querySelectorAll(".appliancesOption") 
 
-//         let searchAppliancesName = e.target.value.toLowerCase();
+        let searchAppliancesName = e.target.value.toLowerCase();
+        const applianceResults = Array.from(appliancesName)
+        .filter(
+            (item) =>
+                item.innerText.toLowerCase().indexOf(searchAppliancesName) !== -1
+        )
+        .map((item) => item.innerText.trim());
+        return display.displayAppliancesButton(applianceResults);
+});
 
-//         if(searchAppliancesName.toLowerCase() > 2){
-//             console.log(searchAppliancesName)
-//             const applianceResults = Array.from(appliancesName)
-//             .filter(
-//                 (item) =>
-//                     item.innerText.toLowerCase().indexOf(searchAppliancesName) !== -1
-//             )
-//             .map((item) => item.innerText.trim());
-//             return display.displayAppliancesButton(applianceResults);
-//         } else {
-//             return "yooooo";
-//         }
 
-// });
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
 
 
 // Ustensils Button searchBar - search ustensils in the button's list
