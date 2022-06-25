@@ -51,7 +51,9 @@ ingredientsSearchInput.addEventListener("keyup", (e) => {
 const appliancesSearchInput = document.querySelector(".sortBtnAppliances")
 
 appliancesSearchInput.addEventListener("keyup", (e) => {
+
     let appliancesName = document.querySelectorAll(".appliancesOption") 
+
 
         let searchAppliancesName = e.target.value.toLowerCase();
         const applianceResults = Array.from(appliancesName)
@@ -60,6 +62,8 @@ appliancesSearchInput.addEventListener("keyup", (e) => {
                 item.innerText.toLowerCase().indexOf(searchAppliancesName) !== -1
         )
         .map((item) => item.innerText.trim());
+        console.log(applianceResults)
+
         return display.displayAppliancesButton(applianceResults);
 });
 
