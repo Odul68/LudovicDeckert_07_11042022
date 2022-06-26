@@ -1,10 +1,10 @@
 import display from "./display.js"
 import filter from "./filters.js"
-import recipes from "../recipes.js"
 
 
 
 // Search is entered and goes to the filterInputs function
+
 
 
 searchInput.addEventListener("keyup", function (e) {
@@ -13,13 +13,17 @@ searchInput.addEventListener("keyup", function (e) {
     });
 
 
+
 // Ingredients Button searchBar  - search ingredients in the button's list
+
 
 
 const ingredientsSearchInput = document.querySelector(".sortBtnIngredients")
 
 ingredientsSearchInput.addEventListener("keyup", (e) => {
+
     let ingredientsName = document.querySelectorAll(".ingredientsOption")
+
 
         let searchIngredientsName = e.target.value.toLowerCase();
         const ingredientResults = Array.from(ingredientsName)
@@ -33,19 +37,8 @@ ingredientsSearchInput.addEventListener("keyup", (e) => {
 
 
 
-
-
-
-
-
-
-
-
-
 // Appliances Button searchBar  - search appliances in the button's list
 
-
-// ========================= TO CHECK LATER +++/////////// ++++++++++==================================
 
 
 const appliancesSearchInput = document.querySelector(".sortBtnAppliances")
@@ -69,22 +62,17 @@ appliancesSearchInput.addEventListener("keyup", (e) => {
 
 
 
-
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
-
-
-
 // Ustensils Button searchBar - search ustensils in the button's list
+
 
 
 const ustensilsSearchInput = document.querySelector(".sortBtnUstensils")
 
 ustensilsSearchInput.addEventListener("keyup", (e) => {
+
     let ustensilsName = document.querySelectorAll(".ustensilsOption")
 
+    
         let searchUstensilsName = e.target.value.toLowerCase();
         const ustensilResults = Array.from(ustensilsName)
         .filter(

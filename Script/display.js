@@ -44,7 +44,8 @@ const tagsContainer = document.querySelector(".tags")
 export class Display {
 
 
-    displayRecipes = (recipes) => {  // Display card with Name, cooking time, ingredients and description
+// Display card with Name, cooking time, ingredients and description
+    displayRecipes = (recipes) => {  
         const recipeContainer = document.querySelector(".recipes");
         recipeContainer.innerHTML = ""; 
         for(let recipe of recipes) {
@@ -82,7 +83,8 @@ export class Display {
 
 
 
-    displayIngredientsButton = (ingredients) => { // Display INGREDIENTS in in the Dropdown button when opened
+// Display INGREDIENTS in in the Dropdown button when opened
+    displayIngredientsButton = (ingredients) => { 
 
         const ingredientsContainer = document.querySelector(".ingredientsContent");
 
@@ -122,7 +124,8 @@ export class Display {
 
 
 
-    displayAppliancesButton = (appliances) => { // Display APPLIANCES in in the Dropdown button when opened
+// Display APPLIANCES in in the Dropdown button when opened
+    displayAppliancesButton = (appliances) => { 
 
         const appliancesContainer = document.querySelector(".appliancesContent");
 
@@ -162,7 +165,8 @@ export class Display {
 
 
         
-    displayUstensilsButton = (ustensils) => { // Display USTENSILS in in the Dropdown button when opened
+// Display USTENSILS in in the Dropdown button when opened
+    displayUstensilsButton = (ustensils) => { 
 
         const ustensilsContainer = document.querySelector(".ustensilsContent");
 

@@ -5,7 +5,7 @@ import display from "./display.js";
 // Format options for the filteredRecipes
 const formatIngredientString = (i) => {
   let g = i.toLowerCase();
-  return `${i[0].toUpperCase()}${g.slice(1)}`;  
+  return `${i[0].toUpperCase()}${g.slice(1)}`;  // First letter of each option is a capital letter
 };
 
 
