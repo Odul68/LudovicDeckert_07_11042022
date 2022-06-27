@@ -156,7 +156,6 @@ export class Filters {
   displayRecipes = () => {
 
     display.displayRecipes(this.filteredRecipes);
-    console.log(this.filteredRecipes)
 
     this.getIngredients();
     this.getAppliances();
