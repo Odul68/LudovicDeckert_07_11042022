@@ -1,6 +1,6 @@
 import display from "./display.js"
 import filter from "./filters.js"
-
+import recipes from "../recipes.js"
 
 
 // Search is entered and goes to the filterInputs function
@@ -8,8 +8,13 @@ import filter from "./filters.js"
 
 
 searchInput.addEventListener("keyup", function (e) {
+    if(e.target.value.length > 2) {
         filter.filterInputs(e.target.value);
-        filter.displayRecipes();
+        filter.displayRecipes(recipes);
+    
+    // } else {
+    //     // display.displayRecipes(recipes);
+    }
     });
 
 
