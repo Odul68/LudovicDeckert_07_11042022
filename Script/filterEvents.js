@@ -8,12 +8,11 @@ import recipes from "../recipes.js"
 
 
 searchInput.addEventListener("keyup", function (e) {
-    if(e.target.value.length > 2) {
+    if(e.target.value.length > 2 || filter.tags.length) {
         filter.filterInputs(e.target.value);
-        filter.displayRecipes(recipes);
-    
-    // } else {
-    //     // display.displayRecipes(recipes);
+        filter.displayRecipes();
+    } else {
+        display.displayRecipes(recipes)
     }
     });
 
